@@ -6,13 +6,31 @@
             "id": "55a689f4-d486-42a6-8c0f-e3b9249c07e2",
             "actions": [
                 {
-                    "name": "ChooseLetter",
+                    "name": "Up",
                     "type": "Button",
                     "id": "65a45479-22f4-4e27-a5aa-9bb6d7ec0054",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "6fae57b6-2192-4c94-a79e-53df313419d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "00b35540-daad-4758-9167-25ad1d612826",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Submit",
@@ -27,23 +45,34 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "33dae666-27da-4221-99a1-c84766c2c2ff",
+                    "id": "8fed620d-b69a-4b13-80ae-cf3ada296de9",
                     "path": "<Gamepad>/leftStick/up",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChooseLetter",
+                    "action": "Up",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "b887d5bf-622a-4985-8662-c30438d3101f",
+                    "id": "75889c76-1aaf-42ef-8da2-3094eea3953d",
                     "path": "<Gamepad>/leftStick/down",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChooseLetter",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99384050-e7ef-4eee-bff1-e6e0406215b7",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "Tap(pressPoint=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -28,7 +28,9 @@ public class HighScoreManager : MonoBehaviour
     
     void Start()
     {
+        Debug.Log("HighScoreFilePath: " + highScoresFilePath.ToString());
         LoadHighScores();
+Debug.Log("HighScoreFilePath: " + highScoresFilePath.ToString());
     }
         
     //Saves HighScores list as JSON
@@ -45,6 +47,7 @@ public class HighScoreManager : MonoBehaviour
         {
             string json = File.ReadAllText(highScoresFilePath);
             highScores = JsonUtility.FromJson<HighScores>(json);
+            Debug.Log("HighScores loaded: " + highScores);
         }
         else
         {

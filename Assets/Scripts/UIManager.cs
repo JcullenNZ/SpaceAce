@@ -49,11 +49,15 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {   
         audioManager.PlayMenuSelect();
+        GameManager.Instance.LoadFirstLevel();
+    }
+
+    public void ShowNameSelect()
+    {
+        audioManager.PlayMenuSelect();
         mainMenuView.SetActive(false);
         nameInputView.SetActive(true);
         eventSystem.SetSelectedGameObject(inputField);
-        //audioManager.PlayMenuSelect();
-        //GameManager.Instance.LoadFirstLevel();
     }
 
     public void ShowSettings()

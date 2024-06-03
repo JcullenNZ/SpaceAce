@@ -28,13 +28,31 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""55a689f4-d486-42a6-8c0f-e3b9249c07e2"",
             ""actions"": [
                 {
-                    ""name"": ""ChooseLetter"",
+                    ""name"": ""Up"",
                     ""type"": ""Button"",
                     ""id"": ""65a45479-22f4-4e27-a5aa-9bb6d7ec0054"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""6fae57b6-2192-4c94-a79e-53df313419d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""00b35540-daad-4758-9167-25ad1d612826"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Submit"",
@@ -49,23 +67,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""33dae666-27da-4221-99a1-c84766c2c2ff"",
+                    ""id"": ""8fed620d-b69a-4b13-80ae-cf3ada296de9"",
                     ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ChooseLetter"",
+                    ""action"": ""Up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b887d5bf-622a-4985-8662-c30438d3101f"",
+                    ""id"": ""75889c76-1aaf-42ef-8da2-3094eea3953d"",
                     ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ChooseLetter"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99384050-e7ef-4eee-bff1-e6e0406215b7"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": ""Tap(pressPoint=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -115,7 +144,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
 }");
         // NameEntry
         m_NameEntry = asset.FindActionMap("NameEntry", throwIfNotFound: true);
-        m_NameEntry_ChooseLetter = m_NameEntry.FindAction("ChooseLetter", throwIfNotFound: true);
+        m_NameEntry_Up = m_NameEntry.FindAction("Up", throwIfNotFound: true);
+        m_NameEntry_Down = m_NameEntry.FindAction("Down", throwIfNotFound: true);
+        m_NameEntry_Move = m_NameEntry.FindAction("Move", throwIfNotFound: true);
         m_NameEntry_Submit = m_NameEntry.FindAction("Submit", throwIfNotFound: true);
         // InGame
         m_InGame = asset.FindActionMap("InGame", throwIfNotFound: true);
@@ -181,13 +212,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // NameEntry
     private readonly InputActionMap m_NameEntry;
     private List<INameEntryActions> m_NameEntryActionsCallbackInterfaces = new List<INameEntryActions>();
-    private readonly InputAction m_NameEntry_ChooseLetter;
+    private readonly InputAction m_NameEntry_Up;
+    private readonly InputAction m_NameEntry_Down;
+    private readonly InputAction m_NameEntry_Move;
     private readonly InputAction m_NameEntry_Submit;
     public struct NameEntryActions
     {
         private @PlayerControls m_Wrapper;
         public NameEntryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ChooseLetter => m_Wrapper.m_NameEntry_ChooseLetter;
+        public InputAction @Up => m_Wrapper.m_NameEntry_Up;
+        public InputAction @Down => m_Wrapper.m_NameEntry_Down;
+        public InputAction @Move => m_Wrapper.m_NameEntry_Move;
         public InputAction @Submit => m_Wrapper.m_NameEntry_Submit;
         public InputActionMap Get() { return m_Wrapper.m_NameEntry; }
         public void Enable() { Get().Enable(); }
@@ -198,9 +233,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_NameEntryActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_NameEntryActionsCallbackInterfaces.Add(instance);
-            @ChooseLetter.started += instance.OnChooseLetter;
-            @ChooseLetter.performed += instance.OnChooseLetter;
-            @ChooseLetter.canceled += instance.OnChooseLetter;
+            @Up.started += instance.OnUp;
+            @Up.performed += instance.OnUp;
+            @Up.canceled += instance.OnUp;
+            @Down.started += instance.OnDown;
+            @Down.performed += instance.OnDown;
+            @Down.canceled += instance.OnDown;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
             @Submit.started += instance.OnSubmit;
             @Submit.performed += instance.OnSubmit;
             @Submit.canceled += instance.OnSubmit;
@@ -208,9 +249,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(INameEntryActions instance)
         {
-            @ChooseLetter.started -= instance.OnChooseLetter;
-            @ChooseLetter.performed -= instance.OnChooseLetter;
-            @ChooseLetter.canceled -= instance.OnChooseLetter;
+            @Up.started -= instance.OnUp;
+            @Up.performed -= instance.OnUp;
+            @Up.canceled -= instance.OnUp;
+            @Down.started -= instance.OnDown;
+            @Down.performed -= instance.OnDown;
+            @Down.canceled -= instance.OnDown;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
             @Submit.started -= instance.OnSubmit;
             @Submit.performed -= instance.OnSubmit;
             @Submit.canceled -= instance.OnSubmit;
@@ -279,7 +326,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public InGameActions @InGame => new InGameActions(this);
     public interface INameEntryActions
     {
-        void OnChooseLetter(InputAction.CallbackContext context);
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
     }
     public interface IInGameActions
