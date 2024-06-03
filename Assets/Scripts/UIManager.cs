@@ -19,10 +19,14 @@ public class UIManager : MonoBehaviour
         public GameObject volumeSlider;
         public GameObject backButton;
 
+    [Header ("---------Name Input---------")]
+    public GameObject inputField;
+    public GameObject submitButton;
+
     [Header ("------------Views------------")]
     public GameObject settingsView;
     public GameObject mainMenuView;
-
+    public GameObject nameInputView;
 
     public GameObject highScoreView;
     public GameObject highScore;
@@ -45,7 +49,11 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {   
         audioManager.PlayMenuSelect();
-        GameManager.Instance.LoadFirstLevel();
+        mainMenuView.SetActive(false);
+        nameInputView.SetActive(true);
+        eventSystem.SetSelectedGameObject(inputField);
+        //audioManager.PlayMenuSelect();
+        //GameManager.Instance.LoadFirstLevel();
     }
 
     public void ShowSettings()

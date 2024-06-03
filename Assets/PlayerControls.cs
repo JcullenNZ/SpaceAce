@@ -22,9 +22,104 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""PlayerControls"",
-    ""maps"": [],
+    ""maps"": [
+        {
+            ""name"": ""NameEntry"",
+            ""id"": ""55a689f4-d486-42a6-8c0f-e3b9249c07e2"",
+            ""actions"": [
+                {
+                    ""name"": ""ChooseLetter"",
+                    ""type"": ""Button"",
+                    ""id"": ""65a45479-22f4-4e27-a5aa-9bb6d7ec0054"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""71e6bf53-d2a5-48ab-a419-b1439a70d13c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""33dae666-27da-4221-99a1-c84766c2c2ff"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseLetter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b887d5bf-622a-4985-8662-c30438d3101f"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseLetter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57773b25-a0dd-4439-832d-17b501c536c5"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""InGame"",
+            ""id"": ""0787b34c-712d-4553-b0ce-a305ad907489"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""c10c4abc-8807-45e2-bc8d-f23bf6361374"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""25b0c959-b6d3-4041-b29a-425b5f8b0e6a"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        }
+    ],
     ""controlSchemes"": []
 }");
+        // NameEntry
+        m_NameEntry = asset.FindActionMap("NameEntry", throwIfNotFound: true);
+        m_NameEntry_ChooseLetter = m_NameEntry.FindAction("ChooseLetter", throwIfNotFound: true);
+        m_NameEntry_Submit = m_NameEntry.FindAction("Submit", throwIfNotFound: true);
+        // InGame
+        m_InGame = asset.FindActionMap("InGame", throwIfNotFound: true);
+        m_InGame_Newaction = m_InGame.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -81,5 +176,114 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public int FindBinding(InputBinding bindingMask, out InputAction action)
     {
         return asset.FindBinding(bindingMask, out action);
+    }
+
+    // NameEntry
+    private readonly InputActionMap m_NameEntry;
+    private List<INameEntryActions> m_NameEntryActionsCallbackInterfaces = new List<INameEntryActions>();
+    private readonly InputAction m_NameEntry_ChooseLetter;
+    private readonly InputAction m_NameEntry_Submit;
+    public struct NameEntryActions
+    {
+        private @PlayerControls m_Wrapper;
+        public NameEntryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ChooseLetter => m_Wrapper.m_NameEntry_ChooseLetter;
+        public InputAction @Submit => m_Wrapper.m_NameEntry_Submit;
+        public InputActionMap Get() { return m_Wrapper.m_NameEntry; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(NameEntryActions set) { return set.Get(); }
+        public void AddCallbacks(INameEntryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_NameEntryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_NameEntryActionsCallbackInterfaces.Add(instance);
+            @ChooseLetter.started += instance.OnChooseLetter;
+            @ChooseLetter.performed += instance.OnChooseLetter;
+            @ChooseLetter.canceled += instance.OnChooseLetter;
+            @Submit.started += instance.OnSubmit;
+            @Submit.performed += instance.OnSubmit;
+            @Submit.canceled += instance.OnSubmit;
+        }
+
+        private void UnregisterCallbacks(INameEntryActions instance)
+        {
+            @ChooseLetter.started -= instance.OnChooseLetter;
+            @ChooseLetter.performed -= instance.OnChooseLetter;
+            @ChooseLetter.canceled -= instance.OnChooseLetter;
+            @Submit.started -= instance.OnSubmit;
+            @Submit.performed -= instance.OnSubmit;
+            @Submit.canceled -= instance.OnSubmit;
+        }
+
+        public void RemoveCallbacks(INameEntryActions instance)
+        {
+            if (m_Wrapper.m_NameEntryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(INameEntryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_NameEntryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_NameEntryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public NameEntryActions @NameEntry => new NameEntryActions(this);
+
+    // InGame
+    private readonly InputActionMap m_InGame;
+    private List<IInGameActions> m_InGameActionsCallbackInterfaces = new List<IInGameActions>();
+    private readonly InputAction m_InGame_Newaction;
+    public struct InGameActions
+    {
+        private @PlayerControls m_Wrapper;
+        public InGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_InGame_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_InGame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InGameActions set) { return set.Get(); }
+        public void AddCallbacks(IInGameActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InGameActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InGameActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+        }
+
+        private void UnregisterCallbacks(IInGameActions instance)
+        {
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+        }
+
+        public void RemoveCallbacks(IInGameActions instance)
+        {
+            if (m_Wrapper.m_InGameActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInGameActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InGameActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InGameActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InGameActions @InGame => new InGameActions(this);
+    public interface INameEntryActions
+    {
+        void OnChooseLetter(InputAction.CallbackContext context);
+        void OnSubmit(InputAction.CallbackContext context);
+    }
+    public interface IInGameActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }
