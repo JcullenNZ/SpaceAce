@@ -27,6 +27,7 @@ public class InputNameController : MonoBehaviour
         controls.NameEntry.Down.performed += ctx => IncrementLetter();
         //controls.NameEntry.Move.performed += ctx => ChooseLetter(ctx.ReadValue<Vector2>());
         controls.NameEntry.Submit.performed += ctx => Submit();
+        Debug.Log("Current Input Index from awake: " + currentInputIndex);
 
 
     }
@@ -40,7 +41,6 @@ public class InputNameController : MonoBehaviour
             alphabet += letters[i].ToString();
         }
         Debug.Log(alphabet);
-        eventSystem.SetSelectedGameObject(playerNameTMP[currentInputIndex].gameObject);
         UpdateLetterTexts();
     }
 
@@ -90,12 +90,12 @@ public class InputNameController : MonoBehaviour
 
     }
 
-    void PreviousInput()
+    /*void PreviousInput()
     {
         currentInputIndex = (currentInputIndex - 1 + playerNameTMP.Length) % playerNameTMP.Length;
 
         Debug.Log("Current Input Index: " + currentInputIndex);
-    }
+    }*/
 
     void IncrementLetter()
     {
@@ -132,7 +132,7 @@ public class InputNameController : MonoBehaviour
             PlayerName += playerNameTMP[i].text;
         }
         NextInput();
-        Debug.Log("Player Name: " + PlayerName);
+        Debug.Log("Submit Player Name: " + PlayerName);
         PlayerPrefs.SetString("PlayerName", PlayerName); // ADD THIS TO THE SCORE OBJECT!
 
     }
