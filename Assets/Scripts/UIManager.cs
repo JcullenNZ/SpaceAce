@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public EventSystem eventSystem;
     public static UIManager Instance;
 
+    AudioManager audioManager;
+
     [Header ("---------Main Menu---------")]
     public GameObject newGameButton;
     public GameObject settingsButton;
@@ -37,17 +39,19 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        audioManager = AudioManager.Instance;
         eventSystem = EventSystem.current;
     }
     public void StartGame()
-    {
+    {   
+        audioManager.PlayMenuSelect();
         GameManager.Instance.LoadFirstLevel();
     }
 
     public void ShowSettings()
     {
         bool isActive = settingsView.activeSelf;
+        audioManager.PlayMenuSelect();
         //highScoreView.SetActive(isActive);
         if(!isActive)
         {
@@ -55,6 +59,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.PlayMenuSelect();
             eventSystem.SetSelectedGameObject(newGameButton);
         }
         mainMenuView.SetActive(isActive);
@@ -64,6 +69,7 @@ public class UIManager : MonoBehaviour
 
     public void QuitGame()
     {
+        AudioManager.Instance.PlayMenuSelect();
         Debug.Log("Thanks for playing");
         GameManager.Instance.QuitGame();
     }
