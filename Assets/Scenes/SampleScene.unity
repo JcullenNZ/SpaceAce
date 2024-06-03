@@ -1714,7 +1714,7 @@ MonoBehaviour:
   sfxSlider: {fileID: 1277382443}
   musicSource: {fileID: 972801328}
   sfxSource: {fileID: 2056713951}
-  mainMenuMusic: {fileID: 8300000, guid: 4212b741545d8ad4b940289849ffb688, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 3e82de5a11fffdc42b3a00d1b38089d8, type: 3}
   gameMusic1: {fileID: 8300000, guid: 8be00f91aa907e84c8663e27e7017477, type: 3}
   gameMusic2: {fileID: 8300000, guid: ff0903e1d58f4ff47a21d77c16668450, type: 3}
   menuSelect: {fileID: 8300000, guid: f8504a9a5dc796f44888cc3799614a35, type: 3}
@@ -2922,7 +2922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c86b0deee261b374981a73b388dcd401, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3648c76823ac0f45890ac4e1996cbfd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

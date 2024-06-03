@@ -54,19 +54,6 @@ public class InputNameController : MonoBehaviour
         controls.NameEntry.Disable();
     }
 
-    /*void ChooseLetter(Vector2 direction)
-    {
-        Debug.Log("Input X: " + direction.x.ToString());
-        if (direction.x > .9)
-        {
-            NextInput();
-        }
-        else if (direction.x < -.9f)
-        {
-            PreviousInput();
-        }
-    }*/
-
     void UpdateLetterTexts()
     {
         for (int i = 0; i < playerNameTMP.Length; i++)
@@ -80,7 +67,7 @@ public class InputNameController : MonoBehaviour
         currentInputIndex = (currentInputIndex + 1) % playerNameTMP.Length;
         if (currentInputIndex != 0)
         {
-                    eventSystem.SetSelectedGameObject(playerNameTMP[currentInputIndex].gameObject);
+            eventSystem.SetSelectedGameObject(playerNameTMP[currentInputIndex].gameObject);
         }
         else
         {
@@ -106,23 +93,9 @@ public class InputNameController : MonoBehaviour
     void DecrementLetter()
     {
         currentInputIndexes[currentInputIndex] = (currentInputIndexes[currentInputIndex] - 1 + letters.Length) % letters.Length;
-        UpdateLetterTexts();}
-
-   /* void IncrementLetter()
-    {
-        // Increment the current letter index (0-25) and wrap around (26 = 0)
-        // Increment the letter at the current index (0-2)
-        currentLetterIndex = (currentLetterIndex + 1) % letters.Length;
-        currentInputIndexes[currentInputIndex] = currentLetterIndex;
         UpdateLetterTexts();
     }
 
-    void DecrementLetter()
-    {
-        currentLetterIndex = (currentLetterIndex - 1 + letters.Length) % letters.Length;
-        currentInputIndexes[currentInputIndex] = currentLetterIndex;
-        UpdateLetterTexts();
-    }*/
 
     void Submit()
     {
