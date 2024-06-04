@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollBG : MonoBehaviour
 {
-    /*
+    
     public float scrollSpeed = 0.5f;
 
     private Renderer rndr;
@@ -21,6 +21,6 @@ public class ScrollBG : MonoBehaviour
         offset = new Vector2(x, 0);
         rndr.sharedMaterial.SetTextureOffset("_MainTex",offset);
 
-    }*/
+    }
 
 }

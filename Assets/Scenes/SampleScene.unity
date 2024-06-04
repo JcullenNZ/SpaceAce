@@ -1714,7 +1714,7 @@ MonoBehaviour:
   sfxSlider: {fileID: 1277382443}
   musicSource: {fileID: 972801328}
   sfxSource: {fileID: 2056713951}
-  mainMenuMusic: {fileID: 8300000, guid: 3e82de5a11fffdc42b3a00d1b38089d8, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 9a6fb8f5cafcc22468d6182c8b57b597, type: 3}
   gameMusic1: {fileID: 8300000, guid: 8be00f91aa907e84c8663e27e7017477, type: 3}
   gameMusic2: {fileID: 8300000, guid: ff0903e1d58f4ff47a21d77c16668450, type: 3}
   menuSelect: {fileID: 8300000, guid: f8504a9a5dc796f44888cc3799614a35, type: 3}
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ddcac1fac1f5c8943a30c2ef6b724062, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1dd85de50765bf42b675bda756ce51c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1879,7 +1879,7 @@ SpriteRenderer:
   m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &735701217
@@ -2922,7 +2922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b3648c76823ac0f45890ac4e1996cbfd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b2d0fc595aa3024ca991e7ebc6a3386, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4951,7 +4951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: efe6ce32a6a4408489775c70e5d32f11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bac15771270abf946a651f712987ffc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
