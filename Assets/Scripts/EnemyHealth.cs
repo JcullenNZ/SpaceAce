@@ -28,12 +28,12 @@ public class EnemyHealth : MonoBehaviour, IHealth
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Debug.Log("Enemy has taken damage");
+        Debug.Log("Enemy health: " + health); 
         if (health <= 0)
         {
             Die();
         }
     }
-
-    // Start is called before the first frame update
 
 }

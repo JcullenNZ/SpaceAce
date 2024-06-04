@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1566232949941916594}
   - component: {fileID: 4148120202898591017}
   - component: {fileID: 4407339843290730856}
-  - component: {fileID: 3625379686330917368}
+  - component: {fileID: -3588120993630518016}
   m_Layer: 0
   m_Name: WorkingEnemy
   m_TagString: Untagged
@@ -145,8 +145,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3625379686330917368
-BoxCollider2D:
+--- !u!60 &-3588120993630518016
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -174,7 +174,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -187,9 +187,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.25}
+      - {x: -0.5, y: 0}
+      - {x: 0, y: -0.25}
+      - {x: 0.5, y: 0}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &3941889364040173982
 PrefabInstance:
   m_ObjectHideFlags: 0

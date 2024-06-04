@@ -17,13 +17,26 @@ void Start()
 
     }
 
-   /*
+   
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && gameObject.CompareTag("EnemyProjectile"))
         {
-            other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            return;
+        }
+        else if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("PlayerProjectile"))
+        {
+            return;
+        }
+       else if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
-    } */  
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
 }

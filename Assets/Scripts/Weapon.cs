@@ -22,10 +22,6 @@ public class Weapon : MonoBehaviour
             InstantiateProjectile();
             StartCoroutine(ShootDelay());
         }
-        else
-        {
-            Debug.Log("Cannot shoot yet");
-        }
     }
 
     public void InstantiateProjectile()

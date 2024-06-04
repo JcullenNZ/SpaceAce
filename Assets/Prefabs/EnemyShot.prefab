@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 527106874302630196}
   m_Layer: 0
   m_Name: EnemyShot
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 0
+  damage: 1
+  timeToLive: 5
 --- !u!70 &527106874302630196
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
