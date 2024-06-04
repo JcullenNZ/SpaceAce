@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position += transform.up * direction.y * speed * Time.deltaTime;
         transform.Rotate(0,0,-direction.x * rotationSpeed * Time.deltaTime);
-        Debug.Log("Move: " + direction);
+        
     }
 
     void Shoot()
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.Log("Waiting: ");}
+            Debug.Log("Waiting In player: " + e.Message);}
 
     }
 }

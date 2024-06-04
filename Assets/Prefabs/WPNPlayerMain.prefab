@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6750313692241402420}
   - component: {fileID: 8104799617503493513}
   m_Layer: 0
-  m_Name: PlayerMain
+  m_Name: WPNPlayerMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

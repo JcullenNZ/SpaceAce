@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public int damage;
+    [HideInInspector]public float speed;
+    [HideInInspector]public int damage;
 
+    public int timeToLive = 1;
+void Start()
+    {
+        Destroy(gameObject, timeToLive);
+    }
     void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector2.up);
+
+
     }
 
    /*
