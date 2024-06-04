@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
 
+    GameManager gameManager;
     public static AudioManager Instance;
     [SerializeField]
     private AudioMixer audioMixer;
@@ -37,7 +38,7 @@ public AudioClip menuSelect;
         {
             Destroy(gameObject);
         }
-
+        GameManager.OnSceneLoaded += HandleOnSceneLoaded;
     }
 
     private void Start()
@@ -57,11 +58,36 @@ public AudioClip menuSelect;
     {
         sfxSource.PlayOneShot(menuSelect);
     }
-
+    
     public void PlayMusic(AudioClip clip)
     {
         musicSource.clip = clip;
         musicSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
+    private void HandleOnSceneLoaded(string sceneName)
+    {
+        switch (sceneName)
+        {
+            case "MainMenu":
+            Debug.Log("Main Menu playing");
+            StopMusic();
+                PlayMusic(mainMenuMusic);
+                break;
+            case "Level":
+            Debug.Log("Level playing");
+            StopMusic();
+                PlayMusic(gameMusic1);
+                break;
+            default:
+                break;}
+
+
     }
 
     private float ValueToVolume(float value, float maxVolume)

@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {   
         audioManager.PlayMenuSelect();
-        GameManager.Instance.LoadFirstLevel();
+        GameManager.Instance.LoadScene("Level");
     }
 
     public void ShowNameSelect()

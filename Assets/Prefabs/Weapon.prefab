@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8069236286702055397
+--- !u!1 &7515129595399186438
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 441810125269850496}
-  - component: {fileID: 7229784166691106637}
+  - component: {fileID: 1572730825692528374}
+  - component: {fileID: 4655126719154282011}
   m_Layer: 0
-  m_Name: EnemyMain
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &441810125269850496
+--- !u!4 &1572730825692528374
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8069236286702055397}
+  m_GameObject: {fileID: 7515129595399186438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7229784166691106637
+--- !u!114 &4655126719154282011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8069236286702055397}
+  m_GameObject: {fileID: 7515129595399186438}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed7ba90697651847ab66cdf2d3e68f2, type: 3}
@@ -46,5 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 0}
   projectilePrefab: {fileID: 0}
-  fireRate: 0.5
+  fireRate: 2
+  fireSpeed: 10
   damage: 0
