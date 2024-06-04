@@ -46,15 +46,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""00b35540-daad-4758-9167-25ad1d612826"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""71e6bf53-d2a5-48ab-a419-b1439a70d13c"",
@@ -84,17 +75,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Down"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""99384050-e7ef-4eee-bff1-e6e0406215b7"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": ""Tap(pressPoint=1)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -186,7 +166,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_NameEntry = asset.FindActionMap("NameEntry", throwIfNotFound: true);
         m_NameEntry_Up = m_NameEntry.FindAction("Up", throwIfNotFound: true);
         m_NameEntry_Down = m_NameEntry.FindAction("Down", throwIfNotFound: true);
-        m_NameEntry_Move = m_NameEntry.FindAction("Move", throwIfNotFound: true);
         m_NameEntry_Submit = m_NameEntry.FindAction("Submit", throwIfNotFound: true);
         // InGame
         m_InGame = asset.FindActionMap("InGame", throwIfNotFound: true);
@@ -256,7 +235,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<INameEntryActions> m_NameEntryActionsCallbackInterfaces = new List<INameEntryActions>();
     private readonly InputAction m_NameEntry_Up;
     private readonly InputAction m_NameEntry_Down;
-    private readonly InputAction m_NameEntry_Move;
     private readonly InputAction m_NameEntry_Submit;
     public struct NameEntryActions
     {
@@ -264,7 +242,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public NameEntryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Up => m_Wrapper.m_NameEntry_Up;
         public InputAction @Down => m_Wrapper.m_NameEntry_Down;
-        public InputAction @Move => m_Wrapper.m_NameEntry_Move;
         public InputAction @Submit => m_Wrapper.m_NameEntry_Submit;
         public InputActionMap Get() { return m_Wrapper.m_NameEntry; }
         public void Enable() { Get().Enable(); }
@@ -281,9 +258,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Down.started += instance.OnDown;
             @Down.performed += instance.OnDown;
             @Down.canceled += instance.OnDown;
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
             @Submit.started += instance.OnSubmit;
             @Submit.performed += instance.OnSubmit;
             @Submit.canceled += instance.OnSubmit;
@@ -297,9 +271,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Down.started -= instance.OnDown;
             @Down.performed -= instance.OnDown;
             @Down.canceled -= instance.OnDown;
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
             @Submit.started -= instance.OnSubmit;
             @Submit.performed -= instance.OnSubmit;
             @Submit.canceled -= instance.OnSubmit;
@@ -386,7 +357,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
     }
     public interface IInGameActions

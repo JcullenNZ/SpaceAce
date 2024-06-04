@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "00b35540-daad-4758-9167-25ad1d612826",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Submit",
                     "type": "Button",
                     "id": "71e6bf53-d2a5-48ab-a419-b1439a70d13c",
@@ -62,17 +53,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "99384050-e7ef-4eee-bff1-e6e0406215b7",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "Tap(pressPoint=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
