@@ -10,7 +10,6 @@ public class Weapon : MonoBehaviour
     public float fireRate = 2f;
 
     public float fireSpeed = 10;
-    private float nextFire = 0.0f;
 
     public bool canShoot = true;
 

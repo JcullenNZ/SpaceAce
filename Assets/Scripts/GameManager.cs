@@ -34,40 +34,19 @@ public class GameManager : MonoBehaviour
         currentState = GameState.MainMenu;
     }
 
-    private void Start()
+
+    void Start()
     {
         Debug.Log("GameManager start");
-        LoadScene("MainMenu");
+        LoadScene("SampleScene");
     }
 
-        public void LoadScene(string sceneName)
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName); 
+        SceneManager.LoadScene(sceneName);
         OnSceneLoaded?.Invoke(sceneName);
         Debug.Log("Scene Loaded: " + sceneName);
     }
-
-
-   /* public void LoadMainMenu()
-    {
-
-        SceneManager.LoadScene("MainMenu");
-        ChangeState(GameState.MainMenu);
-        Debug.Log("Main Menu Loaded");
-    }*/
-    
-    /*public void LoadFirstLevel()
-    {
-        try{
-        SceneManager.LoadScene("Level");
-        ChangeState(GameState.InGame);
-        Debug.Log("Level Loaded");
-        }
-        catch(System.Exception e)
-        {
-            Debug.Log("Error: " + e.Message);
-        }
-    }*/
 
     public void QuitGame()
     {

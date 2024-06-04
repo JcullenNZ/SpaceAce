@@ -3,21 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IHealth
 {
 
-    private static EnemyHealth Instance;
     public int health;
-
-
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void Die()
     {
