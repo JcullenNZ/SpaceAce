@@ -94,9 +94,27 @@
             "id": "0787b34c-712d-4553-b0ce-a305ad907489",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Shoot",
                     "type": "Button",
                     "id": "c10c4abc-8807-45e2-bc8d-f23bf6361374",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "81202a79-8107-43d8-9895-d79731415509",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "f9580a3c-0adf-4f07-98c4-10433bf97616",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -107,11 +125,33 @@
                 {
                     "name": "",
                     "id": "25b0c959-b6d3-4041-b29a-425b5f8b0e6a",
-                    "path": "",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9c33d64-875f-4738-97aa-ed40a97d20bf",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bac2e2f4-e92d-4d4b-8070-b8553de627df",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

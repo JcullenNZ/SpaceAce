@@ -1,33 +1,23 @@
 using UnityEngine;
 
-public class RepeatingBackground : MonoBehaviour
+public class RepeatingBG : MonoBehaviour
 {
-    private Vector2 backgroundSize;
-    private Vector3 startPosition;
+    public Transform playerTransform;
+    public float parallaxEffectMultiplier;
+    Renderer renderer;
+    private Vector3 lastPlayerPosition;
 
     void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        backgroundSize = spriteRenderer.bounds.size;
-        startPosition = transform.position;
+        renderer = GetComponent<Renderer>();
+        lastPlayerPosition = playerTransform.position;
     }
 
     void Update()
     {
-        Vector3 diff = Camera.main.transform.position - startPosition;
-
-        if (Mathf.Abs(diff.x) >= backgroundSize.x)
-        {
-            float offsetX = diff.x > 0 ? backgroundSize.x : -backgroundSize.x;
-            startPosition.x += offsetX;
-            transform.position = new Vector3(startPosition.x, transform.position.y, transform.position.z);
-        }
-
-        if (Mathf.Abs(diff.y) >= backgroundSize.y)
-        {
-            float offsetY = diff.y > 0 ? backgroundSize.y : -backgroundSize.y;
-            startPosition.y += offsetY;
-            transform.position = new Vector3(transform.position.x, startPosition.y, transform.position.z);
-        }
+        Vector3 deltaMovement = playerTransform.position - lastPlayerPosition;
+        Vector2 offset = new Vector2(deltaMovement.x * parallaxEffectMultiplier, deltaMovement.y * parallaxEffectMultiplier);
+        renderer.material.mainTextureOffset += offset;
+        lastPlayerPosition = playerTransform.position;
     }
 }
