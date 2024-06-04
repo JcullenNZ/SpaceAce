@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     [Header ("---------Settings---------")]
         public GameObject volumeSlider;
+        public GameObject sfxSlider;
         public GameObject backButton;
 
     [Header ("---------Name Input---------")]
@@ -37,7 +38,6 @@ public class UIManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -45,11 +45,13 @@ public class UIManager : MonoBehaviour
         }
         audioManager = AudioManager.Instance;
         eventSystem = EventSystem.current;
+
     }
     public void StartGame()
     {   
+
         audioManager.PlayMenuSelect();
-        GameManager.Instance.LoadFirstLevel();
+        GameManager.Instance.LoadScene("Level");
     }
 
     public void ShowNameSelect()
@@ -77,6 +79,19 @@ public class UIManager : MonoBehaviour
         mainMenuView.SetActive(isActive);
         settingsView.SetActive(!isActive);
 
+    }
+
+    public void ChangeMusicVolume()
+    {
+        float volume = volumeSlider.GetComponent<UnityEngine.UI.Slider>().value;
+        audioManager.SetMusicVolume(volume);
+        
+    }
+
+    public void ChangeSFXVolume()
+    {
+        float volume = sfxSlider.GetComponent<UnityEngine.UI.Slider>().value;
+        audioManager.SetSFXVolume(volume);
     }
 
     public void QuitGame()

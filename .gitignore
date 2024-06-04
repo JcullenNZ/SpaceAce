@@ -6,6 +6,8 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/Packages/manifest.json.meta
+/[Aa]ssets/AssetStoreTools*
 
 # Visual Studio generated files
 /[Vv]isual[Ss]tudio/
@@ -23,6 +25,11 @@
 *.mdb
 *.opendb
 *.VC.db
+*.ide
+
+# Rider generated files
+.idea/
+*.sublime-workspace
 
 # OS generated files
 .DS_Store
@@ -33,3 +40,50 @@
 ehthumbs.db
 Thumbs.db
 /MemoryCaptures
+
+# JetBrains Rider generated files
+.idea/
+/*.sln.iml
+
+# User-specific files
+*.swp
+*.swm
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.save
+
+# Built application files
+*.stackdump
+*.log
+
+# Crashlytics generated files
+fabric.properties
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# Ignore Unity Cloud Build manifest files
+/[Uu]nity[Cc]loud
+
+# Unity Cache Server
+/[Cc]ache/
+
+# Unity BuildPipeline Cache
+/[Bb]uild[Pp]ipeline/
+
+# Addressable Assets Data
+/[Aa]ddressable[Aa]ssets[Dd]ata/
+
+# Collaborate generated files
+/[Cc]ollab/
+
+# Temporary files created by the ProcessRunner
+[Dd]ebugOutput/

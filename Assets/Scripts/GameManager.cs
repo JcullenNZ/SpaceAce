@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.IO;
 using UnityEditor;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     private Scene currentScene;
     private bool IsPaused = false;
     private string highScoresFP;
+
+    public static event Action<string> OnSceneLoaded;
 
     public enum GameState { MainMenu, InGame, Paused, GameOver };
     public GameState currentState;
@@ -32,32 +35,17 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void Start()
+    void Start()
     {
         Debug.Log("GameManager start");
-        LoadMainMenu();
+        LoadScene("SampleScene");
     }
 
-
-    public void LoadMainMenu()
+    public void LoadScene(string sceneName)
     {
-
-        SceneManager.LoadScene("MainMenu");
-        ChangeState(GameState.MainMenu);
-        Debug.Log("Main Menu Loaded");
-    }
-    
-    public void LoadFirstLevel()
-    {
-        try{
-        SceneManager.LoadScene("Level");
-        ChangeState(GameState.InGame);
-        Debug.Log("Level Loaded");
-        }
-        catch(System.Exception e)
-        {
-            Debug.Log("Error: " + e.Message);
-        }
+        SceneManager.LoadScene(sceneName);
+        OnSceneLoaded?.Invoke(sceneName);
+        Debug.Log("Scene Loaded: " + sceneName);
     }
 
     public void QuitGame()

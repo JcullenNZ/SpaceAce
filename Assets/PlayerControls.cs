@@ -34,7 +34,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Down"",
@@ -44,15 +44,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""00b35540-daad-4758-9167-25ad1d612826"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Submit"",
@@ -89,17 +80,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""99384050-e7ef-4eee-bff1-e6e0406215b7"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": ""Tap(pressPoint=1)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""57773b25-a0dd-4439-832d-17b501c536c5"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
@@ -116,9 +96,27 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""0787b34c-712d-4553-b0ce-a305ad907489"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Shoot"",
                     ""type"": ""Button"",
                     ""id"": ""c10c4abc-8807-45e2-bc8d-f23bf6361374"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""81202a79-8107-43d8-9895-d79731415509"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""f9580a3c-0adf-4f07-98c4-10433bf97616"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -129,11 +127,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""25b0c959-b6d3-4041-b29a-425b5f8b0e6a"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9c33d64-875f-4738-97aa-ed40a97d20bf"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bac2e2f4-e92d-4d4b-8070-b8553de627df"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -146,11 +166,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_NameEntry = asset.FindActionMap("NameEntry", throwIfNotFound: true);
         m_NameEntry_Up = m_NameEntry.FindAction("Up", throwIfNotFound: true);
         m_NameEntry_Down = m_NameEntry.FindAction("Down", throwIfNotFound: true);
-        m_NameEntry_Move = m_NameEntry.FindAction("Move", throwIfNotFound: true);
         m_NameEntry_Submit = m_NameEntry.FindAction("Submit", throwIfNotFound: true);
         // InGame
         m_InGame = asset.FindActionMap("InGame", throwIfNotFound: true);
-        m_InGame_Newaction = m_InGame.FindAction("New action", throwIfNotFound: true);
+        m_InGame_Shoot = m_InGame.FindAction("Shoot", throwIfNotFound: true);
+        m_InGame_Move = m_InGame.FindAction("Move", throwIfNotFound: true);
+        m_InGame_Pause = m_InGame.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -214,7 +235,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<INameEntryActions> m_NameEntryActionsCallbackInterfaces = new List<INameEntryActions>();
     private readonly InputAction m_NameEntry_Up;
     private readonly InputAction m_NameEntry_Down;
-    private readonly InputAction m_NameEntry_Move;
     private readonly InputAction m_NameEntry_Submit;
     public struct NameEntryActions
     {
@@ -222,7 +242,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public NameEntryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Up => m_Wrapper.m_NameEntry_Up;
         public InputAction @Down => m_Wrapper.m_NameEntry_Down;
-        public InputAction @Move => m_Wrapper.m_NameEntry_Move;
         public InputAction @Submit => m_Wrapper.m_NameEntry_Submit;
         public InputActionMap Get() { return m_Wrapper.m_NameEntry; }
         public void Enable() { Get().Enable(); }
@@ -239,9 +258,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Down.started += instance.OnDown;
             @Down.performed += instance.OnDown;
             @Down.canceled += instance.OnDown;
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
             @Submit.started += instance.OnSubmit;
             @Submit.performed += instance.OnSubmit;
             @Submit.canceled += instance.OnSubmit;
@@ -255,9 +271,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Down.started -= instance.OnDown;
             @Down.performed -= instance.OnDown;
             @Down.canceled -= instance.OnDown;
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
             @Submit.started -= instance.OnSubmit;
             @Submit.performed -= instance.OnSubmit;
             @Submit.canceled -= instance.OnSubmit;
@@ -282,12 +295,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // InGame
     private readonly InputActionMap m_InGame;
     private List<IInGameActions> m_InGameActionsCallbackInterfaces = new List<IInGameActions>();
-    private readonly InputAction m_InGame_Newaction;
+    private readonly InputAction m_InGame_Shoot;
+    private readonly InputAction m_InGame_Move;
+    private readonly InputAction m_InGame_Pause;
     public struct InGameActions
     {
         private @PlayerControls m_Wrapper;
         public InGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_InGame_Newaction;
+        public InputAction @Shoot => m_Wrapper.m_InGame_Shoot;
+        public InputAction @Move => m_Wrapper.m_InGame_Move;
+        public InputAction @Pause => m_Wrapper.m_InGame_Pause;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -297,16 +314,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_InGameActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_InGameActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IInGameActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IInGameActions instance)
@@ -328,11 +357,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
     }
     public interface IInGameActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

@@ -60,6 +60,7 @@ public class InputNameController : MonoBehaviour
         {
             playerNameTMP[i].text = letters[currentInputIndexes[i]].ToString(); //Set the text of the input to the current letter
         }
+        Debug.Log("Current Input Index from UpdateLetterTexts: " + currentInputIndex);
     }
 
     void NextInput()
@@ -107,6 +108,5 @@ public class InputNameController : MonoBehaviour
         NextInput();
         Debug.Log("Submit Player Name: " + PlayerName);
         PlayerPrefs.SetString("PlayerName", PlayerName); // ADD THIS TO THE SCORE OBJECT!
-
     }
 }
