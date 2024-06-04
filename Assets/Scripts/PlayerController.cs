@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
         controls = new PlayerControls();
         controls.InGame.Move.performed += ctx => Move(ctx.ReadValue<Vector2>());
         controls.InGame.Shoot.performed += ctx => Shoot();
-        //controls.InGame.Pause.performed += ctx => Pause();
 
     }
 

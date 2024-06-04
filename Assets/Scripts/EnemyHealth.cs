@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IHealth
 {
 
+    public static event Action OnEnemyDeath = delegate { };
     public int health;
 
     public void Die()
-    {
+    {   
+        OnEnemyDeath.Invoke();
         Destroy(gameObject);
     }
 

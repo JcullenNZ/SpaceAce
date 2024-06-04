@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  timeToLive: 5
+  timeToLive: 7
 --- !u!70 &527106874302630196
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

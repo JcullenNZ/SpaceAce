@@ -48,12 +48,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4655126719154282011, guid: 487042e60c2a4364aa63b8d8f8e0ef00, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655126719154282011, guid: 487042e60c2a4364aa63b8d8f8e0ef00, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 8389238908026584549}
+    - target: {fileID: 4655126719154282011, guid: 487042e60c2a4364aa63b8d8f8e0ef00, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1528039289097635552, guid: d01ec3358222a6d42a893e1b5c17cea9, type: 3}
     - target: {fileID: 7515129595399186438, guid: 487042e60c2a4364aa63b8d8f8e0ef00, type: 3}
       propertyPath: m_Name
-      value: Weapon Variant
+      value: WpnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515129595399186438, guid: 487042e60c2a4364aa63b8d8f8e0ef00, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 487042e60c2a4364aa63b8d8f8e0ef00, type: 3}
+--- !u!4 &8389238908026584549 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1572730825692528374, guid: 487042e60c2a4364aa63b8d8f8e0ef00, type: 3}
+  m_PrefabInstance: {fileID: 7043601284808229651}
+  m_PrefabAsset: {fileID: 0}

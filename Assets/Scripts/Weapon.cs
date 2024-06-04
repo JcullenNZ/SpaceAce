@@ -26,9 +26,9 @@ public class Weapon : MonoBehaviour
 
     public void InstantiateProjectile()
     {
-        Instantiate(projectilePrefab, shootPoint.position, transform.rotation);
-        projectilePrefab.GetComponent<Projectile>().speed = fireSpeed;
-        projectilePrefab.GetComponent<Projectile>().damage = damage;
+        GameObject projectileInstance = Instantiate(projectilePrefab, shootPoint.position, transform.rotation);
+        projectileInstance.GetComponent<Projectile>().speed = fireSpeed;
+        projectileInstance.GetComponent<Projectile>().damage = damage;
     }
 
     private IEnumerator ShootDelay()

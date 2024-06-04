@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -20,7 +18,11 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
       Vector3 direction = (player.position - transform.position).normalized;
-      transform.position += direction * speed * Time.deltaTime;
+      Vector3 rotation = transform.rotation.eulerAngles;
+      rotation.y = 0;
+      rotation.x = 0;
+      transform.rotation = Quaternion.Euler(rotation);
+      transform.position += speed * Time.deltaTime * direction;
     
     transform.up = direction;
         /*float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
