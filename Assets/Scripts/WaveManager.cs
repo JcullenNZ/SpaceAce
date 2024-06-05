@@ -16,7 +16,7 @@ public class WaveManager : MonoBehaviour
     public float timeBetweenWaves = 10f;
     public float timeBetweenEnemies = 1f;
     public int enemiesPerWave = 5;
-    public int currentWave = 0;
+    public int currentWave = 1;
     public int enemiesSpawned = 0;
     public int enemiesKilled = 0;
     public bool waveActive = false;
@@ -82,7 +82,7 @@ public class WaveManager : MonoBehaviour
         {
            randomEnemy = 0;
         }
-        else if (currentWave <= 3)
+        else if (currentWave <= 4)
         {
             randomEnemy = UnityEngine.Random.Range(0, 1);
         }

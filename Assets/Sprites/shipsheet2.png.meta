@@ -1,0 +1,810 @@
+fileFormatVersion: 2
+guid: 99b2519437ffb5e4abeabe4d76debd8b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shipsheet2_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 384
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bc55a36f5f60c409535067d26b770d
+      internalID: -554284042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 384
+        width: 56
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a8b73c9e374e140a42e2ab9040a668
+      internalID: -315163677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 384
+        width: 56
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2918bd43565ba244a7f4f3c8732741c
+      internalID: 686005382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 385
+        width: 56
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6283a79559224184fa496c78ecaad82f
+      internalID: 1018634270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 391
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829e8af841288bc4d96c19ed0bc73cc4
+      internalID: -620554483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 388
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786e13ec036ad23469e1d14d2335e1f9
+      internalID: -2078798697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 386
+        width: 56
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cadff05abe73bcb49981d010cf690972
+      internalID: -1496921034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 324
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e9e1d36c69ab2841b1bd94b2ecc683a
+      internalID: -1939720841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 324
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e57701562bc0842a7cf275aa752cd0
+      internalID: -1645622033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_9
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 323
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1516f6e3e4bdff1409ee1fb171e5b53a
+      internalID: -109970708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_10
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 323
+        width: 56
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22de659dddd1f4342bf704c1bce865ac
+      internalID: 377832254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_11
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 323
+        width: 56
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566a41a8facba384da9c7bf5ec23168c
+      internalID: -1129658095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23b9e2fa772d9e479b85c6cdfb4dd7e
+      internalID: 853199058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_13
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 320
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab18a1946a0fd34b967df63726a25f1
+      internalID: -1739249694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_14
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 259
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ee519f3591e0b43ad145df839630fe
+      internalID: -1634740126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_15
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 258
+        width: 56
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5259d9c5fee8bcd4ab14cb6be718756b
+      internalID: 2009020258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_16
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 192
+        width: 251
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67f4b5aea65e5143aa0d4c3537c8db5
+      internalID: 1813873600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_17
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 192
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9e133fbe3702347a5c9c21d5c7b12e
+      internalID: 670553600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_18
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 207
+        width: 59
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5914461100e312d479b5e81e0e016ec5
+      internalID: -1781971806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_19
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 195
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc63e4206f73b2f48952f8b55af83dda
+      internalID: 1454178160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a06da2b9d12934bbe8a593b4b7a5f8
+      internalID: 881396725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_25
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 133
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a59fabbf1975f5429fad2e21540b39d
+      internalID: -1896817284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d5f78bd24b2e943a1d5f15db496084
+      internalID: -2000618744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_58
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 68
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f531c081c145ddf4297b7fa554e42d39
+      internalID: 857959192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_59
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 70
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a26e3eeee6b8f048929c0fa2aa180b1
+      internalID: -1601141580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_60
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 72
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78309ec0e626905469bafcc42e41f05c
+      internalID: -236498663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_21
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 128
+        width: 66
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17ce37368ddf1d41a4353bc5bfc8038
+      internalID: -1539246433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 131
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d0d89ae968f084189833782c3a4c48
+      internalID: -202747649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shipsheet2_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 127
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d623d1261ea72fc4089d65954a592923
+      internalID: 1615783180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      shipsheet2_0: -554284042
+      shipsheet2_1: -315163677
+      shipsheet2_10: 377832254
+      shipsheet2_11: -1129658095
+      shipsheet2_12: 853199058
+      shipsheet2_13: -1739249694
+      shipsheet2_14: -1634740126
+      shipsheet2_15: 2009020258
+      shipsheet2_16: 1813873600
+      shipsheet2_17: 670553600
+      shipsheet2_18: -1781971806
+      shipsheet2_19: 1454178160
+      shipsheet2_2: 686005382
+      shipsheet2_20: 881396725
+      shipsheet2_21: -1539246433
+      shipsheet2_22: 1615783180
+      shipsheet2_23: -552984177
+      shipsheet2_24: -202747649
+      shipsheet2_25: -1896817284
+      shipsheet2_26: 398705745
+      shipsheet2_27: 1523042826
+      shipsheet2_28: 249015909
+      shipsheet2_29: 753255117
+      shipsheet2_3: 1018634270
+      shipsheet2_30: 635878717
+      shipsheet2_31: -624867784
+      shipsheet2_32: -267212411
+      shipsheet2_33: 1803964251
+      shipsheet2_34: -429881152
+      shipsheet2_35: -970741422
+      shipsheet2_36: 1486989832
+      shipsheet2_37: 603925995
+      shipsheet2_38: -1812402625
+      shipsheet2_39: 482559619
+      shipsheet2_4: -620554483
+      shipsheet2_40: -380548026
+      shipsheet2_41: 1002694858
+      shipsheet2_42: -1497147879
+      shipsheet2_43: -1682900561
+      shipsheet2_44: 551829061
+      shipsheet2_45: 498109295
+      shipsheet2_46: -29711254
+      shipsheet2_47: 995364415
+      shipsheet2_48: -2115629794
+      shipsheet2_49: -2059053220
+      shipsheet2_5: -2078798697
+      shipsheet2_50: -2013995370
+      shipsheet2_51: 969091986
+      shipsheet2_52: -2053699141
+      shipsheet2_53: 193376089
+      shipsheet2_54: 1618847362
+      shipsheet2_55: 102234478
+      shipsheet2_56: -137610212
+      shipsheet2_57: -2000618744
+      shipsheet2_58: 857959192
+      shipsheet2_59: -1601141580
+      shipsheet2_6: -1496921034
+      shipsheet2_60: -236498663
+      shipsheet2_7: -1939720841
+      shipsheet2_8: -1645622033
+      shipsheet2_9: -109970708
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
