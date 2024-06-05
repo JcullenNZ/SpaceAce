@@ -1557,7 +1557,7 @@ MonoBehaviour:
   enemiesKilled: 0
   waveActive: 0
   waveScore: 0
-  waveTimer: 30
+  waveTimer: 60
 --- !u!4 &732523122
 Transform:
   m_ObjectHideFlags: 0
@@ -2749,10 +2749,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -554284042, guid: 99b2519437ffb5e4abeabe4d76debd8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -2770,7 +2770,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1653259820}
@@ -2815,7 +2815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761f437c442c79f4b932f87a42bc1f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8
   rotationSpeed: 100
   weapon: {fileID: 1653259821}
 --- !u!114 &1317469098
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5992a70020a34a040a29bb2cdf55c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 10
 --- !u!60 &1317469099
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2866,8 +2866,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.56, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2875,12 +2875,31 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.006310106, y: 0.64992493}
-      - {x: -0.5694111, y: -0.30286443}
-      - {x: -0.50631005, y: -0.31863958}
-      - {x: -0.111052275, y: -0.33084765}
-      - {x: 0.36635828, y: -0.3182397}
-      - {x: 0.5378609, y: -0.3044418}
+    - - {x: 0.28909457, y: -0.26296902}
+      - {x: 0.16069396, y: -0.11012048}
+      - {x: 0.16077842, y: 0.03576539}
+      - {x: 0.17157331, y: 0.06322576}
+      - {x: 0.1719954, y: 0.21802706}
+      - {x: 0.11785562, y: 0.26956597}
+      - {x: 0.04584572, y: 0.26924223}
+      - {x: 0.032222193, y: 0.28379133}
+      - {x: 0.0005632499, y: 0.29171094}
+      - {x: -0.021444477, y: 0.29091546}
+      - {x: -0.045212477, y: 0.27249664}
+      - {x: -0.121676184, y: 0.2728316}
+      - {x: -0.17321114, y: 0.21501848}
+      - {x: -0.17223644, y: 0.06620234}
+      - {x: -0.16389987, y: 0.033252046}
+      - {x: -0.16360971, y: -0.10823661}
+      - {x: -0.28677338, y: -0.2627831}
+      - {x: -0.28659287, y: -0.29837516}
+      - {x: -0.12673531, y: -0.30328348}
+      - {x: -0.060673937, y: -0.301454}
+      - {x: -0.059717815, y: -0.26920575}
+      - {x: 0.05542, y: -0.26927727}
+      - {x: 0.059716474, y: -0.30120432}
+      - {x: 0.24362347, y: -0.30129877}
+      - {x: 0.28878292, y: -0.30092534}
   m_UseDelaunayMesh: 0
 --- !u!1 &1388474276
 GameObject:
