@@ -42,6 +42,7 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        currentWave = 1;
         StartCoroutine(StartWave());
     }
 
@@ -82,7 +83,7 @@ public class WaveManager : MonoBehaviour
         {
            randomEnemy = 0;
         }
-        else if (currentWave <= 4)
+        else if (currentWave <= 3)
         {
             randomEnemy = UnityEngine.Random.Range(0, 1);
         }
