@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public enum GameState { MainMenu, InGame, Paused, GameOver };
     public GameState currentState;
 
+    public string playerName;
+
     private void Awake()
     {
         //Ensure singleton
@@ -79,11 +81,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     public void ChangeState(GameState newState)
     {
         currentState = newState;
     }
+
+    public void SetPlayerName(string name)
+    {
+        playerName = name;
+    }
+
+    public string GetPlayerName()
+    {
+        return playerName;
+    }   
 
 }
 

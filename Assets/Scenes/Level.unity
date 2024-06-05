@@ -2955,7 +2955,7 @@ GameObject:
   - component: {fileID: 1466414275}
   m_Layer: 5
   m_Name: Name
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3241,10 +3241,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 0}
   pauseMenu: {fileID: 1229179211}
+  playerNameObj: {fileID: 1466414275}
+  scoreText: {fileID: 218308042}
+  timeText: {fileID: 249582332}
   resumeButton: {fileID: 1860173525}
   musicSlider: {fileID: 1586350699}
   sfxSlider: {fileID: 105580984}
   quitButton: {fileID: 1292524659}
+  countdownTime: 30
 --- !u!4 &1477744945
 Transform:
   m_ObjectHideFlags: 0

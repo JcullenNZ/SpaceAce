@@ -9,6 +9,7 @@ TagManager:
   - _sfxSlider
   - EnemyProjectile
   - PlayerProjectile
+  - PlayerName
   layers:
   - Default
   - TransparentFX

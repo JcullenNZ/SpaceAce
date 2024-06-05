@@ -9,7 +9,7 @@ public class HighScoreManager : MonoBehaviour
     public static HighScoreManager Instance;
 
     private string highScoresFilePath;
-    private HighScores highScores; 
+    private HighScores highScores;
     private int numberOfHighScores;
     void Awake()
     {
@@ -23,24 +23,23 @@ public class HighScoreManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        highScoresFilePath = Path.Combine(Application.persistentDataPath,"highscores.json");
+        highScoresFilePath = Path.Combine(Application.persistentDataPath, "highscores.json");
     }
-    
+
     void Start()
     {
-        Debug.Log("HighScoreFilePath: " + highScoresFilePath.ToString());
         LoadHighScores();
-Debug.Log("HighScoreFilePath: " + highScoresFilePath.ToString());
+        Debug.Log("HighScoreFilePath: " + highScoresFilePath.ToString());
     }
-        
+
     //Saves HighScores list as JSON
     public void SaveHighScores(HighScores highScores)
     {
-        string json = JsonUtility.ToJson(highScores,true);
+        string json = JsonUtility.ToJson(highScores, true);
         File.WriteAllText(highScoresFilePath, json);
     }
 
-//Load HighScore JSON file
+    //Load HighScore JSON file
     public void LoadHighScores()
     {
         if (File.Exists(highScoresFilePath))
@@ -56,25 +55,25 @@ Debug.Log("HighScoreFilePath: " + highScoresFilePath.ToString());
         }
     }
 
-//To check if score is a high score
+    //To check if score is a high score
     public bool IsHighScore(int score)
     {
-        
-        if(highScores.scores.Count < numberOfHighScores)
+
+        if (highScores.scores.Count < numberOfHighScores)
         {
             return true;
         }
         return score > highScores.scores[highScores.scores.Count - 1].score;
     }
-//To add the high score, maximum according to 'numberOfHighScores'
+    //To add the high score, maximum according to 'numberOfHighScores'
     public void AddHighScore(string playerName, int score)
     {
-        ScoreEntry newScore = new ScoreEntry {playerName = playerName, score = score};
+        ScoreEntry newScore = new ScoreEntry { playerName = playerName, score = score };
 
         highScores.scores.Add(newScore);
-        highScores.scores.Sort((x,y) => y.score.CompareTo(x.score)); //Sort scores decending (x>y)
+        highScores.scores.Sort((x, y) => y.score.CompareTo(x.score)); //Sort scores decending (x>y)
 
-        if(highScores.scores.Count > numberOfHighScores)
+        if (highScores.scores.Count > numberOfHighScores)
         {
             highScores.scores.RemoveAt(highScores.scores.Count - 1); //Remove the lowest score
         }

@@ -26,7 +26,7 @@ public class InputNameController : MonoBehaviour
         controls.NameEntry.Up.performed += ctx => DecrementLetter();
         controls.NameEntry.Down.performed += ctx => IncrementLetter();
         //controls.NameEntry.Move.performed += ctx => ChooseLetter(ctx.ReadValue<Vector2>());
-        controls.NameEntry.Submit.performed += ctx => Submit();
+        //controls.NameEntry.Submit.performed += ctx => Submit();
         Debug.Log("Current Input Index from awake: " + currentInputIndex);
 
 
@@ -40,7 +40,6 @@ public class InputNameController : MonoBehaviour
             letters[i] = (char)('A' + i);
             alphabet += letters[i].ToString();
         }
-        Debug.Log(alphabet);
         UpdateLetterTexts();
     }
 
@@ -63,7 +62,7 @@ public class InputNameController : MonoBehaviour
         Debug.Log("Current Input Index from UpdateLetterTexts: " + currentInputIndex);
     }
 
-    void NextInput()
+    public void NextInput()
     {
         currentInputIndex = (currentInputIndex + 1) % playerNameTMP.Length;
         if (currentInputIndex != 0)
@@ -78,13 +77,6 @@ public class InputNameController : MonoBehaviour
 
     }
 
-    /*void PreviousInput()
-    {
-        currentInputIndex = (currentInputIndex - 1 + playerNameTMP.Length) % playerNameTMP.Length;
-
-        Debug.Log("Current Input Index: " + currentInputIndex);
-    }*/
-
     void IncrementLetter()
     {
         currentInputIndexes[currentInputIndex] = (currentInputIndexes[currentInputIndex] + 1) % letters.Length;
@@ -98,15 +90,16 @@ public class InputNameController : MonoBehaviour
     }
 
 
-    void Submit()
+    public void Submit()
     {
         string PlayerName = "";
         for (int i = 0; i < playerNameTMP.Length; i++)
         {
             PlayerName += playerNameTMP[i].text;
         }
-        NextInput();
+        
         Debug.Log("Submit Player Name: " + PlayerName);
+        GameManager.Instance.SetPlayerName(PlayerName);
         PlayerPrefs.SetString("PlayerName", PlayerName); // ADD THIS TO THE SCORE OBJECT!
     }
 }
