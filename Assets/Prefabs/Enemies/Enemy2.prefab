@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  scoreValue: 200
 --- !u!60 &471380153895909639
 PolygonCollider2D:
   m_ObjectHideFlags: 0

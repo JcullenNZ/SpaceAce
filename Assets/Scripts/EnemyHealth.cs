@@ -4,12 +4,14 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IHealth
 {
 
-    public static event Action OnEnemyDeath = delegate { };
+    public static event Action<int> OnEnemyDeath = delegate { };
     public int health;
+
+    public int scoreValue;
 
     public void Die()
     {   
-        OnEnemyDeath.Invoke();
+        OnEnemyDeath.Invoke(scoreValue);
         Destroy(gameObject);
     }
 
