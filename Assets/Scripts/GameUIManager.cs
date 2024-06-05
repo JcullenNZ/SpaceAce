@@ -61,7 +61,9 @@ public class GameUIManager : MonoBehaviour
 
     void Update()
     {
+        if(timerActive){
         TimeCountDown();
+        }
 
     }
 
@@ -89,21 +91,39 @@ public class GameUIManager : MonoBehaviour
         int score = int.Parse(scoreText.text);
         score += waveScore;
         SetScoreText(score);
-        timerActive = false;
+        timerActive = false; //Pause timer
     }
 
-    private void HandleWaveStart(int waveTime, int waveNumber, float timeBetweenEnemies)
+    private void HandleWaveStart(int waveTime, int waveNumber, float timeBetweenWaves)
     {
-
-        StartCoroutine(TimeUntilWaveStart(waveNumber, timeBetweenEnemies));
-        SetWaveTimer(waveTime);
-        timerActive = true;
+        StartCoroutine(TimeUntilWaveStart(waveTime,waveNumber, timeBetweenWaves));
     }
 
-    private IEnumerator TimeUntilWaveStart(int waveNumber, float timeBetweenEnemies)
+    private IEnumerator TimeUntilWaveStart(int waveTime, int waveNumber, float timeBetweenWaves)
     {
-        Debug.Log("Wave " + waveNumber + " starting in " + timeBetweenEnemies + " seconds");
-        yield return new WaitForSeconds(timeBetweenEnemies);
+        SetWaveTimer(waveTime); //Time to beat the wave
+        Debug.Log("Wave " + waveNumber + " starting in " + timeBetweenWaves + " seconds");
+        yield return WaveCountDown(timeBetweenWaves); //Countdown to wave start
+        timerActive = true; //Reset Timer
+    }
+
+        public void SetWaveTimer(float waveTime) //Allows it to be set by Wave Manager
+    {
+        timer = waveTime;
+        SetTimeText();
+    }
+
+    private IEnumerator WaveCountDown(float timeBetweenWaves)
+    {   
+        while (timeBetweenWaves > 0)
+        {
+            timeBetweenWaves -= Time.deltaTime;
+            int timeBetweenWavesInt = Mathf.RoundToInt(timeBetweenWaves);
+            Debug.Log( "Wave Begins in: " + timeBetweenWavesInt.ToString());
+            yield return null;
+        }
+        Debug.Log("Wave Starts");
+
     }
 
 
@@ -136,36 +156,22 @@ public class GameUIManager : MonoBehaviour
         timeText.text = time.ToString();
     }
 
-    public void SetWaveTimer(float waveTime) //Allows it to be set by Wave Manager
-    {
-        timer = waveTime;
-        SetTimeText();
-    }
-
     public void TimeCountDown()
     {
-        if (timerActive)
-        {
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
                 timer = 0;
                 Debug.Log("Game Over");
-                PlayerHealth.Instance.Die();
+                PlayerHealth.Instance.Die(); //Player dies when timer runs out, NEED TO HANDLE WAVE AGAIN
             }
             SetTimeText();
-        }
-        else
-        {
-            SetTimeText();
-        }
     }
 
 
     // ****In Game Functions***
     public void PauseGame()
     {
-        //controls.Disable();
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         eventSystem.SetSelectedGameObject(musicSlider);
@@ -182,7 +188,7 @@ public class GameUIManager : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1f;
-        GameManager.Instance.LoadScene("SampleScene");
+        GameManager.Instance.LoadScene("MainMenu");
     }
     // ****Pause Menu Functions***
     public void ChangeMusicVolume()

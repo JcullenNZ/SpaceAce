@@ -78,7 +78,7 @@ public class AudioManager : MonoBehaviour
         Debug.Log("Scene Loaded: " + sceneName);
         switch (sceneName)
         {
-            case "SampleScene":
+            case "MainMenu":
                 Debug.Log("Main Menu playing");
                 StopMusic();
                 PlayMusic(mainMenuMusic);

@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Debug.Log("GameManager start");
-        LoadScene("SampleScene");
+        LoadScene("MainMenu");
     }
 
     public void LoadScene(string sceneName)
@@ -53,8 +53,11 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("QUIT");
+        #if UNITY_EDITOR
         EditorApplication.isPlaying = false;
+        #else
         Application.Quit();
+        #endif
     }
     public void EndGame(int score, string playerName)
     {
