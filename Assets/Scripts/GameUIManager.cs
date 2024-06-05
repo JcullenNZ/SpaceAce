@@ -75,14 +75,16 @@ public class GameUIManager : MonoBehaviour
         EnemyHealth.OnEnemyDeath += HandleOnEnemyDeath;
         WaveManager.OnWaveComplete += HandleWaveComplete;
         WaveManager.OnNewWaveStart += HandleWaveStart;
+        PlayerHealth.OnPlayerDeath += EndGame;
     }
 
     void OnDisable() //Unsubscribing from Actions
     {
         controls.Disable();
         EnemyHealth.OnEnemyDeath -= HandleOnEnemyDeath;
-        WaveManager.OnWaveComplete += HandleWaveComplete;
-        WaveManager.OnNewWaveStart += HandleWaveStart;
+        WaveManager.OnWaveComplete -= HandleWaveComplete;
+        WaveManager.OnNewWaveStart -= HandleWaveStart;
+        PlayerHealth.OnPlayerDeath -= EndGame;
     }
 
     //****Handling Wave Actions****
@@ -91,6 +93,7 @@ public class GameUIManager : MonoBehaviour
         int score = int.Parse(scoreText.text);
         score += waveScore;
         SetScoreText(score);
+        GameManager.Instance.playerScore = score;
         timerActive = false; //Pause timer
     }
 
@@ -143,6 +146,7 @@ public class GameUIManager : MonoBehaviour
         int score = int.Parse(scoreText.text);
         score += scoreValue;
         SetScoreText(score);
+        GameManager.Instance.playerScore = score;
     }
     void SetScoreText(int score)
     {
@@ -182,13 +186,12 @@ public class GameUIManager : MonoBehaviour
         Time.timeScale = 1f;
         eventSystem.SetSelectedGameObject(null);
         pauseMenu.SetActive(false);
-        //controls.Enable();
     }
 
-    public void QuitGame()
+    public void EndGame()
     {
         Time.timeScale = 1f;
-        GameManager.Instance.LoadScene("MainMenu");
+        GameManager.Instance.EndGame();
     }
     // ****Pause Menu Functions***
     public void ChangeMusicVolume()

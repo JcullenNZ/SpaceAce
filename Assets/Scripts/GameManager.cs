@@ -5,6 +5,7 @@ using UnityEngine;
 using System.IO;
 using UnityEditor;
 using System;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameState currentState;
 
     public string playerName;
+    public int playerScore;
 
     private void Awake()
     {
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
         }
 
         currentState = GameState.MainMenu;
+
+        
     }
 
 
@@ -48,6 +52,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         OnSceneLoaded?.Invoke(sceneName);
         Debug.Log("Scene Loaded: " + sceneName);
+        if(sceneName == "MainMenu") //Reset player name and score
+        {
+            playerName = "";
+            playerScore = 0;
+        }
+        
     }
 
     public void QuitGame()
@@ -59,15 +69,14 @@ public class GameManager : MonoBehaviour
         Application.Quit();
         #endif
     }
-    public void EndGame(int score, string playerName)
+    public void EndGame()
     {
-        if (HighScoreManager.Instance.IsHighScore(score))
-        {
-            HighScoreManager.Instance.AddHighScore(playerName, score);
-        }
+        HighScoreManager.Instance.AddHighScore(playerName, playerScore);
         ChangeState(GameState.GameOver);
         SceneManager.LoadScene("GameOver");
     }
+
+
 
     public void PauseGame()
     {
@@ -98,6 +107,16 @@ public class GameManager : MonoBehaviour
     {
         return playerName;
     }   
+
+    public void SetPlayerScore(int score)
+    {
+        playerScore = score;
+    }
+
+    public int GetPlayerScore()
+    {
+        return playerScore;
+    }
 
 }
 

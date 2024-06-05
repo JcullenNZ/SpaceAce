@@ -1556,6 +1556,8 @@ MonoBehaviour:
   enemiesSpawned: 0
   enemiesKilled: 0
   waveActive: 0
+  waveScore: 0
+  waveTimer: 30
 --- !u!4 &732523122
 Transform:
   m_ObjectHideFlags: 0
@@ -2637,7 +2639,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1477744944}
         m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4273,9 +4275,9 @@ SceneRoots:
   - {fileID: 1963107248}
   - {fileID: 1987003087}
   - {fileID: 172488770}
+  - {fileID: 1229179215}
   - {fileID: 1317469094}
   - {fileID: 1202684102}
-  - {fileID: 1229179215}
   - {fileID: 1477744945}
   - {fileID: 135389170}
   - {fileID: 1075255973}

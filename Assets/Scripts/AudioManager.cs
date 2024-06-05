@@ -22,9 +22,10 @@ public class AudioManager : MonoBehaviour
     [Header("------Audio Clips: MUSIC------")]
     public AudioClip mainMenuMusic;
     public AudioClip gameMusic1;
-    public AudioClip gameMusic2;
+    public AudioClip gameOver;
     [Header("------Audio Clips: SFX------")]
     public AudioClip menuSelect;
+    public AudioClip menuHover;
 
 
     public Music currentSong = null;
@@ -88,6 +89,11 @@ public class AudioManager : MonoBehaviour
                 StopMusic();
                 PlayMusic(gameMusic1);
                 break;
+            case "GameOver":
+                Debug.Log("Game Over playing");
+                StopMusic();
+                PlayMusic(gameOver);
+                break;
             default:
                 break;
         }
@@ -106,7 +112,6 @@ public class AudioManager : MonoBehaviour
         Debug.Log("Music Volume: " + volume);
         musicVolume = volume;
     }
-    
 
     public void SetSFXVolume(float volume)
     {
