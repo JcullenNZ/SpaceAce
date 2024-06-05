@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
-
+    public static event Action OnPlayerDeath;
     public static PlayerHealth Instance { get; private set; }
 
     public int health;
@@ -19,12 +20,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
         }
     }
 
+
     public void Die()
     {
         Debug.Log("Player has died");
-        gameObject.GetComponent<Transform>().position = new Vector3(0, 0, 0);
-        SetHealth(10);
-        //GameManager.Instance.EndGame(200, PlayerPrefs.GetString("PlayerName"));
+        OnPlayerDeath?.Invoke();
     }
 
     public int GetHealth()

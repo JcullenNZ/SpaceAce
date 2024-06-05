@@ -24,13 +24,14 @@ public class UIManager : MonoBehaviour
     public GameObject inputField;
     public GameObject submitButton;
 
+    [Header("---------High Score---------")]
+    public GameObject highScoreView;
+    public GameObject highScore;
+
     [Header ("------------Views------------")]
     public GameObject settingsView;
     public GameObject mainMenuView;
     public GameObject nameInputView;
-
-    public GameObject highScoreView;
-    public GameObject highScore;
 
 
     void Awake()
@@ -78,7 +79,6 @@ public class UIManager : MonoBehaviour
         }
         mainMenuView.SetActive(isActive);
         settingsView.SetActive(!isActive);
-
     }
 
     public void ChangeMusicVolume()

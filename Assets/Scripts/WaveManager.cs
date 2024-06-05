@@ -66,7 +66,6 @@ public class WaveManager : MonoBehaviour
         OnNewWaveStart.Invoke(waveTimer, currentWave, timeBetweenWaves);
         yield return new WaitForSeconds(timeBetweenWaves);
         waveScore = currentWave * 100;
-        
         waveActive = true;
         for (int i = 0; i < enemiesPerWave; i++)
         {

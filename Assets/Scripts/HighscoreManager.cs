@@ -11,12 +11,15 @@ public class HighScoreManager : MonoBehaviour
     private string highScoresFilePath;
     private HighScores highScores;
     private int numberOfHighScores;
+
+    public bool isHighScore;
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            highScores = new HighScores();
         }
         else
         {
@@ -24,14 +27,27 @@ public class HighScoreManager : MonoBehaviour
         }
 
         highScoresFilePath = Path.Combine(Application.persistentDataPath, "highscores.json");
+        numberOfHighScores = 5;
+        LoadHighScores();
+        GameManager.OnSceneLoaded += HandleOnSceneLoaded;
     }
+
+    private void HandleOnSceneLoaded(string obj)
+    {
+        if (obj == "MainMenu")
+        {
+            resetIsHighScore();
+        }
+    }
+
 
     void Start()
     {
-        LoadHighScores();
+        isHighScore = false;
         Debug.Log("HighScoreFilePath: " + highScoresFilePath.ToString());
     }
 
+    
     //Saves HighScores list as JSON
     public void SaveHighScores(HighScores highScores)
     {
@@ -46,7 +62,14 @@ public class HighScoreManager : MonoBehaviour
         {
             string json = File.ReadAllText(highScoresFilePath);
             highScores = JsonUtility.FromJson<HighScores>(json);
-            Debug.Log("HighScores loaded: " + highScores);
+
+            if (highScores == null)
+            {
+                Debug.Log("HighScores is null. Making a new one.");
+                highScores = new HighScores();
+            }
+            else
+            { Debug.Log("HighScores loaded: " + highScores.scores.ToString()); }
         }
         else
         {
@@ -65,9 +88,22 @@ public class HighScoreManager : MonoBehaviour
         }
         return score > highScores.scores[highScores.scores.Count - 1].score;
     }
+
+    public void resetIsHighScore()
+    {
+        isHighScore = false;
+    }
     //To add the high score, maximum according to 'numberOfHighScores'
     public void AddHighScore(string playerName, int score)
     {
+        Debug.Log("Adding HighScore: " + playerName + " " + score);
+        
+        if(!IsHighScore(score))
+        {
+            Debug.Log("Not a high score");
+            return;
+        }
+        isHighScore = true;
         ScoreEntry newScore = new ScoreEntry { playerName = playerName, score = score };
 
         highScores.scores.Add(newScore);
@@ -77,6 +113,7 @@ public class HighScoreManager : MonoBehaviour
         {
             highScores.scores.RemoveAt(highScores.scores.Count - 1); //Remove the lowest score
         }
+        SaveHighScores(highScores);
     }
 
     //Return highScores
