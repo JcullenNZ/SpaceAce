@@ -10,11 +10,7 @@ It was fun to see how quickly you can create a basic game with obvious goals, fe
 <br>
 I did not extend it much, only by making the level more difficult to traverse. I played with the gravity to change how the ball reacted to going off the edge of the ramps,
 including needing to jump to get the last collectable.<br>
-And example of the game is shown below.<br>
-
-![Uploading Unity_oENsxaC12W.gif…]()
-
-
+<img width="430" alt="Unity_SWpa5VZiWF" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/8092c14a-0c13-461a-b74e-e18bef247f86"><br>
 It could be interesting to see how 3D development can be made easier with the level creation, to change the
 camera to make it easier to see if the collectable is aligned, and to play with the idea of the 3 dimensions being important. However, I am most interested in 2D development,
 so will only dabble in this occasionally.
