@@ -35,7 +35,7 @@ The Enemy Health is the same as the player health, and able to be set in the inp
 
 <h2>Weapon</h2>
 The weapon was made with the idea that it would handle all shots. It would control how often it could fire, would instatiate the projectile, would assign the damage, the speed of the projectile, and where it was 'mounted' to the ships.<br>
-<img width="790" alt="Weapon" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/6a2cf577-1b4f-45cc-a816-05881cc743d8">
+<img width="790" alt="Weapon" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/6a2cf577-1b4f-45cc-a816-05881cc743d8"><br>
 The most interesting part of this is that it runs a co-routine to delay the next shot.<br>
 The projectile is a basic capsule sprite with a script and a collider2D. <br>
 <img width="754" alt="projectile" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/adbd2f42-ee1d-4845-94bf-2ebda7857f9d">
