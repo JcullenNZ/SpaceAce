@@ -38,7 +38,7 @@ The weapon was made with the idea that it would handle all shots. It would contr
 <img width="790" alt="Weapon" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/6a2cf577-1b4f-45cc-a816-05881cc743d8"><br>
 The most interesting part of this is that it runs a co-routine to delay the next shot.<br>
 The projectile is a basic capsule sprite with a script and a collider2D. <br>
-<img width="754" alt="projectile" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/adbd2f42-ee1d-4845-94bf-2ebda7857f9d">
+<img width="754" alt="projectile" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/adbd2f42-ee1d-4845-94bf-2ebda7857f9d"><br>
 To make correct interactions with the objects, the projectile checks to see if the other collider has the correct tag. The projectile, player, and all enemies have a corresponding tag to correctly handle interactions. By having the health managers, it makes it easy to call the TakeDamage methods.<br>
 
 At this point, the player can move around in the game area, enemies will move towards the player and shoot automatically, and the player and enemies can die as they are supposed to. One of the key parts of this game was also the ability to have an infinite map, and an infinite number of enemies, so that only the best SpaceAce would make it to the leader board. These will be handled by the next milestone.
