@@ -7,12 +7,12 @@ Designed for VIA University College - GMD1 in semester 6 of the Software Enginee
 Included in this project is a development diary in the form of 6 blog posts:
 <h3>Blogs</h3>
 <ul>
-<li><a href="">Blog 1 - Rollerball tutorial</li>
-<li><a href="">Blog 2 - Game Design Document</li>
-<li><a href="">Blog 3 - Development Update 1</li>
-<li><a href="">Blog 4 - Development Update 2</li>
-<li><a href="">Blog 5 - Development Update 3</li>
-<li><a href="">Blog 6 - Final product and Conclusion</li>
+<li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog1.md">Blog 1 - Rollerball tutorial</li>
+<li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog2 - Game Description.md">Blog 2 - Game Design Document</li>
+<li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog3 - Milestone1.md">Blog 3 - Development Update 1</li>
+<li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog4 - Milestone2.md">Blog 4 - Development Update 2</li>
+<li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog5 - Milestone3.md">Blog 5 - Development Update 3</li>
+<li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog6 - The final post.md">Blog 6 - Final product and Conclusion</li>
 </ul>
 
 <h3>Video</h3>
