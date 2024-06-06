@@ -27,7 +27,10 @@ public class GameUIManager : MonoBehaviour
     public GameObject sfxSlider;
     public GameObject quitButton;
 
-    [Header("---------Countdown Timer---------")]
+    [Header("---------Wave Elements---------")]
+    public TextMeshProUGUI waveFinishedText;
+    public TextMeshProUGUI waveStartText;
+    public TextMeshProUGUI countdownText;
     public float countdownTime = 30f; //Initialise in inspector
     private float timer;
 
@@ -95,6 +98,7 @@ public class GameUIManager : MonoBehaviour
         SetScoreText(score);
         GameManager.Instance.playerScore = score;
         timerActive = false; //Pause timer
+        waveFinishedText.gameObject.SetActive(true);
     }
 
     private void HandleWaveStart(int waveTime, int waveNumber, float timeBetweenWaves)
@@ -105,8 +109,14 @@ public class GameUIManager : MonoBehaviour
     private IEnumerator TimeUntilWaveStart(int waveTime, int waveNumber, float timeBetweenWaves)
     {
         SetWaveTimer(waveTime); //Time to beat the wave
-        Debug.Log("Wave " + waveNumber + " starting in " + timeBetweenWaves + " seconds");
+        waveStartText.gameObject.SetActive(true);
+        countdownText.gameObject.SetActive(true);
+        waveStartText.text = "Wave " + waveNumber.ToString() + " Begins in";
+        countdownText.text = timeBetweenWaves.ToString();
         yield return WaveCountDown(timeBetweenWaves); //Countdown to wave start
+        waveFinishedText.gameObject.SetActive(false);
+        waveStartText.gameObject.SetActive(false);
+        countdownText.gameObject.SetActive(false);
         timerActive = true; //Reset Timer
     }
 
@@ -121,8 +131,8 @@ public class GameUIManager : MonoBehaviour
         while (timeBetweenWaves > 0)
         {
             timeBetweenWaves -= Time.deltaTime;
+            countdownText.text = timeBetweenWaves.ToString();
             int timeBetweenWavesInt = Mathf.RoundToInt(timeBetweenWaves);
-            Debug.Log( "Wave Begins in: " + timeBetweenWavesInt.ToString());
             yield return null;
         }
         Debug.Log("Wave Starts");
