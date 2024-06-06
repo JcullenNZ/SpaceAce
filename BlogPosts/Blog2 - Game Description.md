@@ -74,9 +74,9 @@ Health Bars: Displays health for player and enemies.<br>
 As way to keep the project development on track, 3 milestones must be set to deliver a final game in time.<br>
 The three milestones selected are:<br>
 <ol>
-  <li><a href="">Main menu view, Audio, Scene, Game and UI management</a></li>
-  <li><a href="">Core game play, Enemy and player interactions, death</a></li>
-  <li><a href="">Full game loop, scoring system, wave management</a></li>
+  <li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog3 - Milestone1.md">Main menu view, Audio, Scene, Game and UI management</a></li>
+  <li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog4 - Milestone2.md">Core game play, Enemy and player interactions, death</a></li>
+  <li><a href="https://github.com/JcullenNZ/SpaceAce/blob/main/BlogPosts/Blog5 - Milestone3.md">Full game loop, scoring system, wave management</a></li>
 </ol>
 
 Beyond this, the game should be in a state where it is fully playable and anything beyond is 'extra spice'.
