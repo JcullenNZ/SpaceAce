@@ -131,8 +131,8 @@ public class GameUIManager : MonoBehaviour
         while (timeBetweenWaves > 0)
         {
             timeBetweenWaves -= Time.deltaTime;
-            countdownText.text = timeBetweenWaves.ToString();
             int timeBetweenWavesInt = Mathf.RoundToInt(timeBetweenWaves);
+            countdownText.text = timeBetweenWavesInt.ToString();
             yield return null;
         }
         Debug.Log("Wave Starts");
