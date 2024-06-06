@@ -1,10 +1,10 @@
 <h1>Blog Post 4 - Milestone 2</h1>
 In this blog post, I will establish the basic game loop. That includes:
--creating player input
--player
--enemy
--interactions
--weapon systems
+  -creating player input
+  -player
+  -enemy
+  -interactions
+  -weapon systems
 
 <h2>Player Input</h2>
 At the last milestone, all the interactions were with UI and could be handled by the event system. Now I needed to control the player object as it moved around in the world.<br>
