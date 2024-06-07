@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - _musicSlider
+  - _sfxSlider
+  - EnemyProjectile
+  - PlayerProjectile
+  - PlayerName
   layers:
   - Default
   - TransparentFX
