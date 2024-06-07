@@ -27,6 +27,9 @@
 *.VC.db
 *.ide
 
+# VSC
+*.vscode
+
 # Rider generated files
 .idea/
 *.sublime-workspace
