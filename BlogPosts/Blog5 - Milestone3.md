@@ -26,6 +26,25 @@ The final part of the wave manager is the update. This is where, as enemies are 
 The GameUIManager is listening to the wave manager, and it uses it to show the wave information for the player.<br> 
 <img width="654" alt="Unity_NirbrsKHVE" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/5f3809a2-5a5d-440b-9ad0-408ab550c3c0"><br>
 <img width="659" alt="GameUIManager_WaveActions" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/81e35650-ec3f-4c91-a73c-5d7a318eca3e"><br>
-This handles the GUI information about the wave, presenting good player feedback. 
+This handles the GUI information about the wave, providing good player feedback.<br>
+There are two other main new pieces of information the GameUIManager handles, that being updating the player's name and score to the HUB.<br>
+
+Speaking of score...
+<h2>The High Scores</h2>'
+Finally, there is proof that you are the top SpaceAce!<br>
+The HighScoreManager is responsible for handling the loading, saving, and adding of highscores. It stores the scores as a JSON file, stored locally on the machine under 'Application.persistantPath'/highscores.json. For windows, this means it is stored in the AppData under the game company name. 
+<img width="644" alt="HighScoreMgr" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/831ab378-8da2-45fb-b3b4-ec51218c97dc"><br>
+<img width="570" alt="HighScore_saveload" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/bfa0d260-b97f-420e-ac47-f4f74bb4dd1f"><br>
+<img width="689" alt="HighSCore_add" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/f190fefd-1c18-40ae-a7ce-36c36af6056f"><br>
+
+The AddHighSCore method takes a highscore, checks if there is space for a new highscore and if the score is indeed a highscore, then when it is, removes the lowest score and places it in the correct position on the leader board.<br>
+<img width="655" alt="Unity_CvnJC266u1" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/81623e73-e4e9-41d2-8abb-61651c9531f9">
+
+The leaderboard shows on the game over screen, and is displayed by the highscoretable script.
+<img width="698" alt="Code_FTG0Q2pk0T" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/7f5ad790-6d0b-430a-aa01-9ca6f0619872">
+There is a prefab in the table, which contains 3 game objects with a TextMeshPro component. These are then filled in the DisplayHighScores method by reading through the HighScores object returned by the GetHighScores method in the HighscoreManager. A table is also added to the first screen.
+<img width="655" alt="Unity_2WgLnSClNW" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/4f972535-9037-473e-81b6-8963ea5ac1e3">
+
+
 
 
