@@ -20,7 +20,7 @@ Starting the wave is a coroutine that starts by sending out a message for any ev
 It then waits for a defined time, the timeBetweenWaves, to provide a break in the action. Once that returns, the wave is active and SpawnEnemy() is called the number of times for enemies per wave.<br>
 SpawnEnemy as a method handles which enemies to spawn from the array of supplied enemies. By using the indexes of enemies, each wave can be tailored to increase in difficulty. Currently, the first round holds only easy enemies, but as the waveCount increases, the option of spawning harder enemies opens up.
 They are also spawned at a random location from the array of spawnpoints, meaning every game will be different.<br>
-<img width="498" alt="WaveManager_Update" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/7ad04bed-a0eb-432b-b20e-d04ef255f39b">
+<img width="498" alt="WaveManager_Update" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/7ad04bed-a0eb-432b-b20e-d04ef255f39b"><br>
 The final part of the wave manager is the update. This is where, as enemies are killed, it checks to see if you have finished the wave. The first thing when you complete a wave is to set the score of the wave and an event is sent out to notify any listening scripts. The loop then continues.<br>
 
 The GameUIManager is listening to the wave manager, and it uses it to show the wave information for the player.<br> 
@@ -38,11 +38,11 @@ The HighScoreManager is responsible for handling the loading, saving, and adding
 <img width="689" alt="HighSCore_add" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/f190fefd-1c18-40ae-a7ce-36c36af6056f"><br>
 
 The AddHighSCore method takes a highscore, checks if there is space for a new highscore and if the score is indeed a highscore, then when it is, removes the lowest score and places it in the correct position on the leader board.<br>
-<img width="655" alt="Unity_CvnJC266u1" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/81623e73-e4e9-41d2-8abb-61651c9531f9">
+<img width="655" alt="Unity_CvnJC266u1" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/81623e73-e4e9-41d2-8abb-61651c9531f9"><br>
 
-The leaderboard shows on the game over screen, and is displayed by the highscoretable script.
-<img width="698" alt="Code_FTG0Q2pk0T" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/7f5ad790-6d0b-430a-aa01-9ca6f0619872">
-There is a prefab in the table, which contains 3 game objects with a TextMeshPro component. These are then filled in the DisplayHighScores method by reading through the HighScores object returned by the GetHighScores method in the HighscoreManager. A table is also added to the first screen.
+The leaderboard shows on the game over screen, and is displayed by the highscoretable script.<br>
+<img width="698" alt="Code_FTG0Q2pk0T" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/7f5ad790-6d0b-430a-aa01-9ca6f0619872"><br>
+There is a prefab in the table, which contains 3 game objects with a TextMeshPro component. These are then filled in the DisplayHighScores method by reading through the HighScores object returned by the GetHighScores method in the HighscoreManager. A table is also added to the first screen.<br>
 <img width="655" alt="Unity_2WgLnSClNW" src="https://github.com/JcullenNZ/SpaceAce/assets/94792906/4f972535-9037-473e-81b6-8963ea5ac1e3">
 
 
