@@ -16,7 +16,7 @@ Included in this project is a development diary in the form of 6 blog posts:
 </ul>
 
 <h3>Video</h3>
-You can see a video of the final product <a href="">here.</a><br>
+You can see a video of the final product <a href="https://youtu.be/YX8Ug7Zlmc0">here.</a><br>
 
 Finally, this project would not have been possible without help, including
 
