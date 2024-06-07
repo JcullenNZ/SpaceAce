@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using System.IO;
 using UnityEditor;
 using System;
-using Unity.VisualScripting;
+using UnityEngine.InputSystem;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -40,7 +39,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-
     void Start()
     {
         Debug.Log("GameManager start");
@@ -60,6 +58,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+
+
     public void QuitGame()
     {
         Debug.Log("QUIT");
@@ -75,8 +75,6 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.GameOver);
         SceneManager.LoadScene("GameOver");
     }
-
-
 
     public void PauseGame()
     {

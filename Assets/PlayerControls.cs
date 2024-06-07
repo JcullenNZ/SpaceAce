@@ -24,31 +24,49 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""NameEntry"",
-            ""id"": ""55a689f4-d486-42a6-8c0f-e3b9249c07e2"",
+            ""name"": ""Xbox"",
+            ""id"": ""6f3801eb-9360-4940-ad6c-70793868e474"",
             ""actions"": [
                 {
-                    ""name"": ""Up"",
+                    ""name"": ""LStick"",
+                    ""type"": ""Value"",
+                    ""id"": ""dfa12dd2-0aac-4a36-b0a0-9937f11c694f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""A"",
                     ""type"": ""Button"",
-                    ""id"": ""65a45479-22f4-4e27-a5aa-9bb6d7ec0054"",
+                    ""id"": ""dc542155-350e-4908-ad4f-dc45e72efac5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Down"",
+                    ""name"": ""B"",
                     ""type"": ""Button"",
-                    ""id"": ""6fae57b6-2192-4c94-a79e-53df313419d9"",
+                    ""id"": ""e838df4e-0ef2-444b-bf52-681ba9df577c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Submit"",
+                    ""name"": ""X"",
                     ""type"": ""Button"",
-                    ""id"": ""71e6bf53-d2a5-48ab-a419-b1439a70d13c"",
+                    ""id"": ""18ce5b67-16d7-47e0-b004-ce39aab8eb07"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Y"",
+                    ""type"": ""Button"",
+                    ""id"": ""348307ff-4eaf-4e3d-91fc-05eae6391e6d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -58,51 +76,153 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""82331995-4742-429a-8593-2e603c345a1f"",
-                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""id"": ""9a377c74-86cb-4c2f-b9c4-4df41ed99389"",
+                    ""path"": ""<XInputController>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Up"",
+                    ""action"": ""LStick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8fed620d-b69a-4b13-80ae-cf3ada296de9"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""id"": ""268b59b9-374e-4c84-8aec-d0e42f6b730b"",
+                    ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Up"",
+                    ""action"": ""A"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""249b237d-53aa-47ab-9da2-909acb777341"",
-                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""id"": ""8411b4c7-cdd3-4ec9-8902-338d8fd9fbce"",
+                    ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Down"",
+                    ""action"": ""B"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""75889c76-1aaf-42ef-8da2-3094eea3953d"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""id"": ""49aaa8ee-854f-47ea-b52c-590b37008389"",
+                    ""path"": ""<XInputController>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Down"",
+                    ""action"": ""X"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6f51f779-e5c0-47b5-9422-cd236b31fb33"",
+                    ""id"": ""6659a906-f886-41ea-bf99-6849c591e8e4"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Y"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""6a4fe2b5-e332-473f-86c5-ba67d1c4c6dd"",
+            ""actions"": [
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""24abafb2-badf-4ef5-8e7e-98f504ece11d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""5058b191-072b-48e2-a92b-53f95c5b07c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2fa3165-9f33-48b3-b99d-45135340952a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Point"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""3e5c56a3-72da-42d0-8ffd-3fd81b1614fe"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""cf9b8021-0655-42e2-877a-7f61a6dfb492"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightClick"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""fc87b503-b342-4d4c-b90e-f7554181a2db"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MiddleClick"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""94d3f577-0b3b-4e79-b899-87d4befe484f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ScrollWheel"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""8bca46a1-0029-4079-b85d-6562c348e485"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4fb979d5-aa3a-461e-90f2-ad12a70879d1"",
+                    ""path"": ""<XInputController>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6eef9c4-0364-4734-bcc1-2ae495202540"",
                     ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -113,12 +233,67 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""57773b25-a0dd-4439-832d-17b501c536c5"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""095c164d-8766-41e1-99a6-e3e138f4793a"",
+                    ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Submit"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3329dc02-b69f-462d-b790-e72c0761fe0e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19e64f4f-e6ef-468d-ad32-a309521a101d"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""127c4fb0-42c1-4bce-8a85-0b6f9275517f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c595685-034e-41c9-b196-818bf15f9b06"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MiddleClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ac8b6de-c9ca-48c1-b924-c8b191471982"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -224,20 +399,138 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""NameEntry"",
+            ""id"": ""55a689f4-d486-42a6-8c0f-e3b9249c07e2"",
+            ""actions"": [
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""65a45479-22f4-4e27-a5aa-9bb6d7ec0054"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""6fae57b6-2192-4c94-a79e-53df313419d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""71e6bf53-d2a5-48ab-a419-b1439a70d13c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""82331995-4742-429a-8593-2e603c345a1f"",
+                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8fed620d-b69a-4b13-80ae-cf3ada296de9"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""249b237d-53aa-47ab-9da2-909acb777341"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75889c76-1aaf-42ef-8da2-3094eea3953d"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f51f779-e5c0-47b5-9422-cd236b31fb33"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57773b25-a0dd-4439-832d-17b501c536c5"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // NameEntry
-        m_NameEntry = asset.FindActionMap("NameEntry", throwIfNotFound: true);
-        m_NameEntry_Up = m_NameEntry.FindAction("Up", throwIfNotFound: true);
-        m_NameEntry_Down = m_NameEntry.FindAction("Down", throwIfNotFound: true);
-        m_NameEntry_Submit = m_NameEntry.FindAction("Submit", throwIfNotFound: true);
+        // Xbox
+        m_Xbox = asset.FindActionMap("Xbox", throwIfNotFound: true);
+        m_Xbox_LStick = m_Xbox.FindAction("LStick", throwIfNotFound: true);
+        m_Xbox_A = m_Xbox.FindAction("A", throwIfNotFound: true);
+        m_Xbox_B = m_Xbox.FindAction("B", throwIfNotFound: true);
+        m_Xbox_X = m_Xbox.FindAction("X", throwIfNotFound: true);
+        m_Xbox_Y = m_Xbox.FindAction("Y", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
+        m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
+        m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
+        m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
+        m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
+        m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
+        m_UI_MiddleClick = m_UI.FindAction("MiddleClick", throwIfNotFound: true);
+        m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         // InGame
         m_InGame = asset.FindActionMap("InGame", throwIfNotFound: true);
         m_InGame_Shoot = m_InGame.FindAction("Shoot", throwIfNotFound: true);
         m_InGame_Move = m_InGame.FindAction("Move", throwIfNotFound: true);
         m_InGame_Pause = m_InGame.FindAction("Pause", throwIfNotFound: true);
+        // NameEntry
+        m_NameEntry = asset.FindActionMap("NameEntry", throwIfNotFound: true);
+        m_NameEntry_Up = m_NameEntry.FindAction("Up", throwIfNotFound: true);
+        m_NameEntry_Down = m_NameEntry.FindAction("Down", throwIfNotFound: true);
+        m_NameEntry_Submit = m_NameEntry.FindAction("Submit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -296,67 +589,185 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // NameEntry
-    private readonly InputActionMap m_NameEntry;
-    private List<INameEntryActions> m_NameEntryActionsCallbackInterfaces = new List<INameEntryActions>();
-    private readonly InputAction m_NameEntry_Up;
-    private readonly InputAction m_NameEntry_Down;
-    private readonly InputAction m_NameEntry_Submit;
-    public struct NameEntryActions
+    // Xbox
+    private readonly InputActionMap m_Xbox;
+    private List<IXboxActions> m_XboxActionsCallbackInterfaces = new List<IXboxActions>();
+    private readonly InputAction m_Xbox_LStick;
+    private readonly InputAction m_Xbox_A;
+    private readonly InputAction m_Xbox_B;
+    private readonly InputAction m_Xbox_X;
+    private readonly InputAction m_Xbox_Y;
+    public struct XboxActions
     {
         private @PlayerControls m_Wrapper;
-        public NameEntryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Up => m_Wrapper.m_NameEntry_Up;
-        public InputAction @Down => m_Wrapper.m_NameEntry_Down;
-        public InputAction @Submit => m_Wrapper.m_NameEntry_Submit;
-        public InputActionMap Get() { return m_Wrapper.m_NameEntry; }
+        public XboxActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LStick => m_Wrapper.m_Xbox_LStick;
+        public InputAction @A => m_Wrapper.m_Xbox_A;
+        public InputAction @B => m_Wrapper.m_Xbox_B;
+        public InputAction @X => m_Wrapper.m_Xbox_X;
+        public InputAction @Y => m_Wrapper.m_Xbox_Y;
+        public InputActionMap Get() { return m_Wrapper.m_Xbox; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(NameEntryActions set) { return set.Get(); }
-        public void AddCallbacks(INameEntryActions instance)
+        public static implicit operator InputActionMap(XboxActions set) { return set.Get(); }
+        public void AddCallbacks(IXboxActions instance)
         {
-            if (instance == null || m_Wrapper.m_NameEntryActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_NameEntryActionsCallbackInterfaces.Add(instance);
-            @Up.started += instance.OnUp;
-            @Up.performed += instance.OnUp;
-            @Up.canceled += instance.OnUp;
-            @Down.started += instance.OnDown;
-            @Down.performed += instance.OnDown;
-            @Down.canceled += instance.OnDown;
-            @Submit.started += instance.OnSubmit;
-            @Submit.performed += instance.OnSubmit;
-            @Submit.canceled += instance.OnSubmit;
+            if (instance == null || m_Wrapper.m_XboxActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_XboxActionsCallbackInterfaces.Add(instance);
+            @LStick.started += instance.OnLStick;
+            @LStick.performed += instance.OnLStick;
+            @LStick.canceled += instance.OnLStick;
+            @A.started += instance.OnA;
+            @A.performed += instance.OnA;
+            @A.canceled += instance.OnA;
+            @B.started += instance.OnB;
+            @B.performed += instance.OnB;
+            @B.canceled += instance.OnB;
+            @X.started += instance.OnX;
+            @X.performed += instance.OnX;
+            @X.canceled += instance.OnX;
+            @Y.started += instance.OnY;
+            @Y.performed += instance.OnY;
+            @Y.canceled += instance.OnY;
         }
 
-        private void UnregisterCallbacks(INameEntryActions instance)
+        private void UnregisterCallbacks(IXboxActions instance)
         {
-            @Up.started -= instance.OnUp;
-            @Up.performed -= instance.OnUp;
-            @Up.canceled -= instance.OnUp;
-            @Down.started -= instance.OnDown;
-            @Down.performed -= instance.OnDown;
-            @Down.canceled -= instance.OnDown;
-            @Submit.started -= instance.OnSubmit;
-            @Submit.performed -= instance.OnSubmit;
-            @Submit.canceled -= instance.OnSubmit;
+            @LStick.started -= instance.OnLStick;
+            @LStick.performed -= instance.OnLStick;
+            @LStick.canceled -= instance.OnLStick;
+            @A.started -= instance.OnA;
+            @A.performed -= instance.OnA;
+            @A.canceled -= instance.OnA;
+            @B.started -= instance.OnB;
+            @B.performed -= instance.OnB;
+            @B.canceled -= instance.OnB;
+            @X.started -= instance.OnX;
+            @X.performed -= instance.OnX;
+            @X.canceled -= instance.OnX;
+            @Y.started -= instance.OnY;
+            @Y.performed -= instance.OnY;
+            @Y.canceled -= instance.OnY;
         }
 
-        public void RemoveCallbacks(INameEntryActions instance)
+        public void RemoveCallbacks(IXboxActions instance)
         {
-            if (m_Wrapper.m_NameEntryActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_XboxActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(INameEntryActions instance)
+        public void SetCallbacks(IXboxActions instance)
         {
-            foreach (var item in m_Wrapper.m_NameEntryActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_XboxActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_NameEntryActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_XboxActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public NameEntryActions @NameEntry => new NameEntryActions(this);
+    public XboxActions @Xbox => new XboxActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_Navigate;
+    private readonly InputAction m_UI_Submit;
+    private readonly InputAction m_UI_Cancel;
+    private readonly InputAction m_UI_Point;
+    private readonly InputAction m_UI_Click;
+    private readonly InputAction m_UI_RightClick;
+    private readonly InputAction m_UI_MiddleClick;
+    private readonly InputAction m_UI_ScrollWheel;
+    public struct UIActions
+    {
+        private @PlayerControls m_Wrapper;
+        public UIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
+        public InputAction @Submit => m_Wrapper.m_UI_Submit;
+        public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
+        public InputAction @Point => m_Wrapper.m_UI_Point;
+        public InputAction @Click => m_Wrapper.m_UI_Click;
+        public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
+        public InputAction @MiddleClick => m_Wrapper.m_UI_MiddleClick;
+        public InputAction @ScrollWheel => m_Wrapper.m_UI_ScrollWheel;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @Navigate.started += instance.OnNavigate;
+            @Navigate.performed += instance.OnNavigate;
+            @Navigate.canceled += instance.OnNavigate;
+            @Submit.started += instance.OnSubmit;
+            @Submit.performed += instance.OnSubmit;
+            @Submit.canceled += instance.OnSubmit;
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
+            @Point.started += instance.OnPoint;
+            @Point.performed += instance.OnPoint;
+            @Point.canceled += instance.OnPoint;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @RightClick.started += instance.OnRightClick;
+            @RightClick.performed += instance.OnRightClick;
+            @RightClick.canceled += instance.OnRightClick;
+            @MiddleClick.started += instance.OnMiddleClick;
+            @MiddleClick.performed += instance.OnMiddleClick;
+            @MiddleClick.canceled += instance.OnMiddleClick;
+            @ScrollWheel.started += instance.OnScrollWheel;
+            @ScrollWheel.performed += instance.OnScrollWheel;
+            @ScrollWheel.canceled += instance.OnScrollWheel;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @Navigate.started -= instance.OnNavigate;
+            @Navigate.performed -= instance.OnNavigate;
+            @Navigate.canceled -= instance.OnNavigate;
+            @Submit.started -= instance.OnSubmit;
+            @Submit.performed -= instance.OnSubmit;
+            @Submit.canceled -= instance.OnSubmit;
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
+            @Point.started -= instance.OnPoint;
+            @Point.performed -= instance.OnPoint;
+            @Point.canceled -= instance.OnPoint;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @RightClick.started -= instance.OnRightClick;
+            @RightClick.performed -= instance.OnRightClick;
+            @RightClick.canceled -= instance.OnRightClick;
+            @MiddleClick.started -= instance.OnMiddleClick;
+            @MiddleClick.performed -= instance.OnMiddleClick;
+            @MiddleClick.canceled -= instance.OnMiddleClick;
+            @ScrollWheel.started -= instance.OnScrollWheel;
+            @ScrollWheel.performed -= instance.OnScrollWheel;
+            @ScrollWheel.canceled -= instance.OnScrollWheel;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
 
     // InGame
     private readonly InputActionMap m_InGame;
@@ -419,16 +830,97 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public InGameActions @InGame => new InGameActions(this);
-    public interface INameEntryActions
+
+    // NameEntry
+    private readonly InputActionMap m_NameEntry;
+    private List<INameEntryActions> m_NameEntryActionsCallbackInterfaces = new List<INameEntryActions>();
+    private readonly InputAction m_NameEntry_Up;
+    private readonly InputAction m_NameEntry_Down;
+    private readonly InputAction m_NameEntry_Submit;
+    public struct NameEntryActions
     {
-        void OnUp(InputAction.CallbackContext context);
-        void OnDown(InputAction.CallbackContext context);
+        private @PlayerControls m_Wrapper;
+        public NameEntryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Up => m_Wrapper.m_NameEntry_Up;
+        public InputAction @Down => m_Wrapper.m_NameEntry_Down;
+        public InputAction @Submit => m_Wrapper.m_NameEntry_Submit;
+        public InputActionMap Get() { return m_Wrapper.m_NameEntry; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(NameEntryActions set) { return set.Get(); }
+        public void AddCallbacks(INameEntryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_NameEntryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_NameEntryActionsCallbackInterfaces.Add(instance);
+            @Up.started += instance.OnUp;
+            @Up.performed += instance.OnUp;
+            @Up.canceled += instance.OnUp;
+            @Down.started += instance.OnDown;
+            @Down.performed += instance.OnDown;
+            @Down.canceled += instance.OnDown;
+            @Submit.started += instance.OnSubmit;
+            @Submit.performed += instance.OnSubmit;
+            @Submit.canceled += instance.OnSubmit;
+        }
+
+        private void UnregisterCallbacks(INameEntryActions instance)
+        {
+            @Up.started -= instance.OnUp;
+            @Up.performed -= instance.OnUp;
+            @Up.canceled -= instance.OnUp;
+            @Down.started -= instance.OnDown;
+            @Down.performed -= instance.OnDown;
+            @Down.canceled -= instance.OnDown;
+            @Submit.started -= instance.OnSubmit;
+            @Submit.performed -= instance.OnSubmit;
+            @Submit.canceled -= instance.OnSubmit;
+        }
+
+        public void RemoveCallbacks(INameEntryActions instance)
+        {
+            if (m_Wrapper.m_NameEntryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(INameEntryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_NameEntryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_NameEntryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public NameEntryActions @NameEntry => new NameEntryActions(this);
+    public interface IXboxActions
+    {
+        void OnLStick(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
+        void OnB(InputAction.CallbackContext context);
+        void OnX(InputAction.CallbackContext context);
+        void OnY(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnNavigate(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
+        void OnPoint(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        void OnRightClick(InputAction.CallbackContext context);
+        void OnMiddleClick(InputAction.CallbackContext context);
+        void OnScrollWheel(InputAction.CallbackContext context);
     }
     public interface IInGameActions
     {
         void OnShoot(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+    }
+    public interface INameEntryActions
+    {
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnSubmit(InputAction.CallbackContext context);
     }
 }

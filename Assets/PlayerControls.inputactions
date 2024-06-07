@@ -2,31 +2,49 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "NameEntry",
-            "id": "55a689f4-d486-42a6-8c0f-e3b9249c07e2",
+            "name": "Xbox",
+            "id": "6f3801eb-9360-4940-ad6c-70793868e474",
             "actions": [
                 {
-                    "name": "Up",
+                    "name": "LStick",
+                    "type": "Value",
+                    "id": "dfa12dd2-0aac-4a36-b0a0-9937f11c694f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "A",
                     "type": "Button",
-                    "id": "65a45479-22f4-4e27-a5aa-9bb6d7ec0054",
+                    "id": "dc542155-350e-4908-ad4f-dc45e72efac5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Down",
+                    "name": "B",
                     "type": "Button",
-                    "id": "6fae57b6-2192-4c94-a79e-53df313419d9",
+                    "id": "e838df4e-0ef2-444b-bf52-681ba9df577c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Submit",
+                    "name": "X",
                     "type": "Button",
-                    "id": "71e6bf53-d2a5-48ab-a419-b1439a70d13c",
+                    "id": "18ce5b67-16d7-47e0-b004-ce39aab8eb07",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Y",
+                    "type": "Button",
+                    "id": "348307ff-4eaf-4e3d-91fc-05eae6391e6d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -36,51 +54,153 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "82331995-4742-429a-8593-2e603c345a1f",
-                    "path": "<XInputController>/leftStick/up",
+                    "id": "9a377c74-86cb-4c2f-b9c4-4df41ed99389",
+                    "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up",
+                    "action": "LStick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "8fed620d-b69a-4b13-80ae-cf3ada296de9",
-                    "path": "<Gamepad>/leftStick/up",
+                    "id": "268b59b9-374e-4c84-8aec-d0e42f6b730b",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up",
+                    "action": "A",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "249b237d-53aa-47ab-9da2-909acb777341",
-                    "path": "<XInputController>/leftStick/down",
+                    "id": "8411b4c7-cdd3-4ec9-8902-338d8fd9fbce",
+                    "path": "<XInputController>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Down",
+                    "action": "B",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "75889c76-1aaf-42ef-8da2-3094eea3953d",
-                    "path": "<Gamepad>/leftStick/down",
+                    "id": "49aaa8ee-854f-47ea-b52c-590b37008389",
+                    "path": "<XInputController>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Down",
+                    "action": "X",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6f51f779-e5c0-47b5-9422-cd236b31fb33",
+                    "id": "6659a906-f886-41ea-bf99-6849c591e8e4",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "6a4fe2b5-e332-473f-86c5-ba67d1c4c6dd",
+            "actions": [
+                {
+                    "name": "Navigate",
+                    "type": "PassThrough",
+                    "id": "24abafb2-badf-4ef5-8e7e-98f504ece11d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "5058b191-072b-48e2-a92b-53f95c5b07c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "b2fa3165-9f33-48b3-b99d-45135340952a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "3e5c56a3-72da-42d0-8ffd-3fd81b1614fe",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "cf9b8021-0655-42e2-877a-7f61a6dfb492",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightClick",
+                    "type": "PassThrough",
+                    "id": "fc87b503-b342-4d4c-b90e-f7554181a2db",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MiddleClick",
+                    "type": "PassThrough",
+                    "id": "94d3f577-0b3b-4e79-b899-87d4befe484f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ScrollWheel",
+                    "type": "PassThrough",
+                    "id": "8bca46a1-0029-4079-b85d-6562c348e485",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4fb979d5-aa3a-461e-90f2-ad12a70879d1",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6eef9c4-0364-4734-bcc1-2ae495202540",
                     "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
@@ -91,12 +211,67 @@
                 },
                 {
                     "name": "",
-                    "id": "57773b25-a0dd-4439-832d-17b501c536c5",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "095c164d-8766-41e1-99a6-e3e138f4793a",
+                    "path": "<XInputController>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Submit",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3329dc02-b69f-462d-b790-e72c0761fe0e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19e64f4f-e6ef-468d-ad32-a309521a101d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "127c4fb0-42c1-4bce-8a85-0b6f9275517f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c595685-034e-41c9-b196-818bf15f9b06",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MiddleClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ac8b6de-c9ca-48c1-b924-c8b191471982",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -198,6 +373,107 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "NameEntry",
+            "id": "55a689f4-d486-42a6-8c0f-e3b9249c07e2",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "65a45479-22f4-4e27-a5aa-9bb6d7ec0054",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "6fae57b6-2192-4c94-a79e-53df313419d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "71e6bf53-d2a5-48ab-a419-b1439a70d13c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "82331995-4742-429a-8593-2e603c345a1f",
+                    "path": "<XInputController>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8fed620d-b69a-4b13-80ae-cf3ada296de9",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "249b237d-53aa-47ab-9da2-909acb777341",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75889c76-1aaf-42ef-8da2-3094eea3953d",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f51f779-e5c0-47b5-9422-cd236b31fb33",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "57773b25-a0dd-4439-832d-17b501c536c5",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public EventSystem eventSystem;
     public static UIManager Instance;
 
+    GameManager gameManager;
+
     AudioManager audioManager;
 
     [Header ("---------Main Menu---------")]
@@ -46,13 +48,13 @@ public class UIManager : MonoBehaviour
         }
         audioManager = AudioManager.Instance;
         eventSystem = EventSystem.current;
-
-    }
+            }
     public void StartGame()
     {   
 
         audioManager.PlayMenuSelect();
         GameManager.Instance.LoadScene("Level");
+        
     }
 
     public void ShowNameSelect()
@@ -100,6 +102,7 @@ public class UIManager : MonoBehaviour
         Debug.Log("Thanks for playing");
         GameManager.Instance.QuitGame();
     }
+
 
 
 }
