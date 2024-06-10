@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
     [Header("------Audio Clips: SFX------")]
     public AudioClip menuSelect;
     public AudioClip menuHover;
+    public AudioClip enemyDeath;
+    
 
 
     public Music currentSong = null;

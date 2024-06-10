@@ -1,10 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
     public static event Action OnPlayerDeath;
     public static PlayerHealth Instance { get; private set; }
+
+    public Slider healthBar;
+    public GameObject deathEffect;
 
     public int health;
 
@@ -23,7 +27,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     public void Die()
     {
-        Debug.Log("Player has died");
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.gameOver);	
         OnPlayerDeath?.Invoke();
     }
 
@@ -35,21 +39,27 @@ public class PlayerHealth : MonoBehaviour, IHealth
     public void Heal(int healAmount)
     {
         health += healAmount;
+        healthBar.value = health;
     }
 
     public void SetHealth(int newHealth)
     {
         health = newHealth;
+        healthBar.maxValue = health;
     }
 
     public void TakeDamage(int damage)
     {
         
         health -= damage;
-        Debug.Log("Player has taken damage");
-        Debug.Log("Player health: " + health);
+        healthBar.value = health;
+        if (health <=2 )
+        {
+            healthBar.GetComponentInChildren<Image>().color = Color.red;
+        }
         if (health <= 0)
         {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             Die();
         }
     }

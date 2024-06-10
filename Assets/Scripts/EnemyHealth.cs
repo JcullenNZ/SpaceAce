@@ -8,9 +8,12 @@ public class EnemyHealth : MonoBehaviour, IHealth
     public int health;
 
     public int scoreValue;
+    public GameObject deathEffect;
 
     public void Die()
     {   
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyDeath);
         OnEnemyDeath.Invoke(scoreValue);
         Destroy(gameObject);
     }

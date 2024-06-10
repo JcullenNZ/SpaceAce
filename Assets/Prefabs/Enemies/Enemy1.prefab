@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   scoreValue: 100
+  deathEffect: {fileID: 890681576701997122, guid: 29b69ec82b76feb4c9d26e17b33697f9, type: 3}
 --- !u!60 &5482516006564103653
 PolygonCollider2D:
   m_ObjectHideFlags: 0

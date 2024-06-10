@@ -26,7 +26,9 @@ public class GameUIManager : MonoBehaviour
     public GameObject musicSlider;
     public GameObject sfxSlider;
     public GameObject quitButton;
-
+    [Header("---------Game Over Elements---------")]
+public TextMeshProUGUI gameOverText;
+public TextMeshProUGUI deathText;
     [Header("---------Wave Elements---------")]
     public TextMeshProUGUI waveFinishedText;
     public TextMeshProUGUI waveStartText;
@@ -176,8 +178,8 @@ public class GameUIManager : MonoBehaviour
             if (timer <= 0)
             {
                 timer = 0;
-                Debug.Log("Game Over");
-                PlayerHealth.Instance.Die(); //Player dies when timer runs out, NEED TO HANDLE WAVE AGAIN
+                deathText.text = "You ran out of time!";
+                EndGame();
             }
             SetTimeText();
     }
@@ -198,10 +200,20 @@ public class GameUIManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
-    public void EndGame()
+// ****Game Over Functions***
+    private IEnumerator GameDelay()
     {
+        yield return new WaitForSecondsRealtime(4f);
         Time.timeScale = 1f;
         GameManager.Instance.EndGame();
+    }
+    public void EndGame()
+    {
+        Time.timeScale = 0f;
+        gameOverText.gameObject.SetActive(true);
+        deathText.gameObject.SetActive(true);
+        StartCoroutine(GameDelay());
+
     }
     // ****Pause Menu Functions***
     public void ChangeMusicVolume()
@@ -215,5 +227,7 @@ public class GameUIManager : MonoBehaviour
         float volume = sfxSlider.GetComponent<UnityEngine.UI.Slider>().value;
         audioManager.SetSFXVolume(volume);
     }
+
+
 
 }
